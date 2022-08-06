@@ -8,7 +8,7 @@ import * as Common from "../../common/common";
 
 export type Type = "neutral" | "info" | "success" | "warning" | "critical";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly children: React.ReactNode;
   readonly type?: Type;
   readonly strikeThrough?: boolean;

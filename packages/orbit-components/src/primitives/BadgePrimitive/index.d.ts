@@ -7,7 +7,7 @@ import { AnyStyledComponent } from "styled-components";
 import { Carrier } from "../../CarrierLogo";
 import * as Common from "../../common/common";
 
-export interface Props extends Common.Global {
+export interface Props extends Common.Globals {
   readonly children?: React.ReactNode;
   readonly icon?: React.ReactNode;
   readonly carriers?: Carrier[];
