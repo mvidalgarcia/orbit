@@ -8,7 +8,8 @@ import * as Common from "../common/common";
 
 type Align = "left" | "center" | "right" | "justify";
 type As = "p" | "span" | "div";
-type Type =
+
+export type Type =
   | "primary"
   | "secondary"
   | "attention"
@@ -17,7 +18,8 @@ type Type =
   | "warning"
   | "critical"
   | "white";
-type Weight = "normal" | "medium" | "bold";
+
+export type Weight = "normal" | "medium" | "bold";
 
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly type?: Type;
