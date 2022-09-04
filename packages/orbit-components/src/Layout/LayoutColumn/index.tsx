@@ -6,8 +6,13 @@ import getViewportHideStyles from "../../Hide/helpers/getViewportHideStyles";
 import { StyledCard } from "../../Card";
 import { getBreakpointWidth } from "../../utils/mediaQuery";
 import { QUERIES } from "../../utils/mediaQuery/consts";
+<<<<<<< HEAD:packages/orbit-components/src/Layout/LayoutColumn/index.tsx
 import { Props } from "./types";
 import { Devices } from "../../utils/mediaQuery/types";
+=======
+import { Props } from "./index.d";
+import { Devices } from "../../utils/mediaQuery/index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Layout/LayoutColumn/index.jsx
 
 const StyledColumn: any = styled.div<{ spanEntireRow?: boolean; hideOn?: Devices[] }>`
   ${({ theme, spanEntireRow, hideOn }) => css`

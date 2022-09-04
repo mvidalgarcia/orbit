@@ -17,7 +17,11 @@ import Stack from "../Stack";
 import useStateWithTimeout from "../hooks/useStateWithTimeout";
 import Heading from "../Heading";
 import { rtlSpacing } from "../utils/rtl";
+<<<<<<< HEAD:packages/orbit-components/src/Drawer/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Drawer/index.jsx
 
 const getPadding = ({
   noPadding,

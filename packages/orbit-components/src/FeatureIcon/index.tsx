@@ -2,8 +2,12 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme from "../defaultTheme";
+<<<<<<< HEAD:packages/orbit-components/src/FeatureIcon/index.tsx
 // @ts-expect-error currently can't resolve properly mts extension
 import { baseURL } from "./consts.mts";
+=======
+import { baseURL } from "./consts";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/FeatureIcon/index.jsx
 import { Props } from "./index.d";
 
 const baseSize = 52;

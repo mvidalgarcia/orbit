@@ -8,7 +8,11 @@ import defaultTheme from "../defaultTheme";
 import { getSize } from "../Icon";
 import { right } from "../utils/rtl";
 import handleKeyDown from "../utils/handleKeyDown";
+<<<<<<< HEAD:packages/orbit-components/src/ListChoice/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/ListChoice/index.jsx
 
 const StyledListChoiceIcon = styled.div`
   ${({ theme }) => css`

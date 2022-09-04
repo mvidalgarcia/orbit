@@ -1,6 +1,10 @@
 import * as React from "react";
 
+<<<<<<< HEAD:packages/orbit-components/src/Tile/components/TileExpandable/index.tsx
 import * as Common from "../../../common/types";
+=======
+import * as Common from "../../../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Tile/components/TileExpandable/index.jsx
 import Slide from "../../../utils/Slide";
 import { useRandomIdSeed } from "../../../hooks/useRandomId";
 import TileContent from "../TileContent";

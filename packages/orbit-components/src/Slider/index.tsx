@@ -15,7 +15,11 @@ import Histogram from "./components/Histogram";
 import defaultTheme, { ThemeProps } from "../defaultTheme";
 import mq from "../utils/mediaQuery";
 import boundingClientRect from "../utils/boundingClientRect";
+<<<<<<< HEAD:packages/orbit-components/src/Slider/index.tsx
 import { State, Callback as SliderCallback, Props, Value } from "./types";
+=======
+import { State, Callback as SliderCallback, Props, Value } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Slider/index.jsx
 
 const StyledSlider = styled.div`
   position: relative;

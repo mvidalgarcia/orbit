@@ -1,5 +1,9 @@
 import { TYPES } from "../consts";
+<<<<<<< HEAD:packages/orbit-components/src/Tag/helpers/resolveCircleColor.ts
 import { Type } from "../types";
+=======
+import { Type } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Tag/helpers/resolveCircleColor.js
 import { Theme } from "../../defaultTheme";
 
 const resolveColor = () => ({

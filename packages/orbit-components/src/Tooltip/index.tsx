@@ -4,7 +4,11 @@ import { SIZE_OPTIONS } from "./consts";
 import TooltipPrimitive from "../primitives/TooltipPrimitive";
 import useMediaQuery from "../hooks/useMediaQuery";
 import MobileDialog from "../primitives/MobileDialogPrimitive";
+<<<<<<< HEAD:packages/orbit-components/src/Tooltip/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Tooltip/index.jsx
 
 const Tooltip = ({
   children,

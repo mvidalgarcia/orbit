@@ -3,8 +3,13 @@
 
 import * as React from "react";
 
+<<<<<<< HEAD:packages/orbit-components/src/HorizontalScroll/types.ts
 import { Spacing } from "../Stack/types";
 import * as Common from "../common/types";
+=======
+import { Spacing } from "../Stack/index.d";
+import * as Common from "../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/HorizontalScroll/index.d.ts
 
 /** DOCS:implement HorizontalScroll component into your project you'll need to add the import:
 

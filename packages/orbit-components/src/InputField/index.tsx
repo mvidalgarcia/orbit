@@ -1,7 +1,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/InputField/index.tsx
 import * as Common from "../common/types";
+=======
+import * as Common from "../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/InputField/index.jsx
 import defaultTheme, { Theme } from "../defaultTheme";
 import { SIZE_OPTIONS, TYPE_OPTIONS, TOKENS } from "./consts";
 import { StyledServiceLogo } from "../ServiceLogo";
@@ -18,7 +22,11 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "./helpers/formElementFocus";
 import { StyledButtonPrimitiveIconContainer } from "../primitives/ButtonPrimitive/components/ButtonPrimitiveIconContainer";
 import mq from "../utils/mediaQuery";
+<<<<<<< HEAD:packages/orbit-components/src/InputField/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/InputField/index.jsx
 
 const getToken = (name: string) => ({ theme, size }: { theme: Theme; size: Props["size"] }) => {
   const tokens = {

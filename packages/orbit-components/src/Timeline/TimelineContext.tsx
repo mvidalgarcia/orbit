@@ -1,6 +1,10 @@
 import * as React from "react";
 
+<<<<<<< HEAD
 import { Type } from "./TimelineStep/types";
+=======
+import { Type } from "./TimelineStep/index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 type Statuses = Record<string, Type>;
 

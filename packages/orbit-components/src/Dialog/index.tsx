@@ -14,7 +14,11 @@ import { StyledButtonPrimitive } from "../primitives/ButtonPrimitive";
 import KEY_CODE_MAP from "../common/keyMaps";
 import useRandomId from "../hooks/useRandomId";
 import { left } from "../utils/rtl";
+<<<<<<< HEAD:packages/orbit-components/src/Dialog/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Dialog/index.jsx
 
 const StyledDialog = styled.div`
   ${({ theme }) => css`

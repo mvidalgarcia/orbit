@@ -1,5 +1,9 @@
 import { Theme } from "../../../defaultTheme";
+<<<<<<< HEAD:packages/orbit-components/src/Seat/components/helpers/index.ts
 import { Type } from "../../types";
+=======
+import { Type } from "../../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Seat/components/helpers/index.js
 import resolveAccentColor from "./resolveAccentColor";
 import resolveFocusColor from "./resolveFocusColor";
 import resolveFillColor from "./resolveFillColor";

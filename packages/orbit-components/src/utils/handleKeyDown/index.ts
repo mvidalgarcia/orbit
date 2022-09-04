@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as Common from "../../common/types";
 import KEY_CODE_MAP from "../../common/keyMaps";
 
@@ -6,6 +7,12 @@ type Event<T> = Common.Event<React.SyntheticEvent<T>> | React.KeyboardEventHandl
 type HandleKeyDown = <K>(onClick?: Event<K>, action?: () => void) => React.KeyboardEventHandler<K>;
 
 const handleKeyDown: HandleKeyDown = (onAction, action) => ev => {
+=======
+import KEY_CODE_MAP from "../../common/keyMaps";
+import { HandleKeyDown } from "./index.d";
+
+const handleKeyDown: typeof HandleKeyDown = (onAction, action) => ev => {
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
   if (ev.keyCode === KEY_CODE_MAP.ENTER) {
     if (onAction) {
       onAction(ev);

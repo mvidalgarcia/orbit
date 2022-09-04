@@ -1,4 +1,8 @@
+<<<<<<< HEAD:packages/orbit-components/src/Slider/utils/calculateCountOf.ts
 import { Value, Data } from "../types";
+=======
+import { Value, Data } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Slider/utils/calculateCountOf.js
 
 type CalculateCountOf = (data: Data, value: Value, min: number) => [number, number];
 

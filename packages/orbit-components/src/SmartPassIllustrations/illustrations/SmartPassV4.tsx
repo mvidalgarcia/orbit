@@ -2,7 +2,11 @@ import * as React from "react";
 
 import { useRandomIdSeed } from "../../hooks/useRandomId";
 import IllustrationWrapper from "./IllustrationWrapper";
+<<<<<<< HEAD:packages/orbit-components/src/SmartPassIllustrations/illustrations/SmartPassV4.tsx
 import { Props } from "../types";
+=======
+import { Props } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/SmartPassIllustrations/illustrations/SmartPassV4.jsx
 
 const SmartPassV4 = ({ primary, secondary, ...props }: Props) => {
   const randomId = useRandomIdSeed();

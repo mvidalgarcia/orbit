@@ -1,8 +1,18 @@
 import * as React from "react";
 import { number, text, select, boolean } from "@storybook/addon-knobs";
 
+<<<<<<< HEAD:packages/orbit-components/src/deprecated/RatingStars/RatingStars.stories.tsx
 import { MAX_STARS, ICON_COLORS, ICON_SIZES } from "./consts";
+=======
+<<<<<<< HEAD:packages/orbit-components/src/deprecated/RatingStars/RatingStars.stories.jsx
+import MAX_STARS from "./consts";
+import { ICON_COLORS, ICON_SIZES } from "../../Icon/consts";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/deprecated/RatingStars/RatingStars.stories.jsx
 import RenderInRtl from "../../utils/rtl/RenderInRtl";
+=======
+import { MAX_STARS, ICON_COLORS, ICON_SIZES } from "./consts";
+import RenderInRtl from "../utils/rtl/RenderInRtl";
+>>>>>>> c624db547 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/RatingStars/RatingStars.stories.tsx
 
 import RatingStars from ".";
 

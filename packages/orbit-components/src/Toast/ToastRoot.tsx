@@ -5,7 +5,11 @@ import styled, { css } from "styled-components";
 import ToastMessage from "./ToastMessage";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
+<<<<<<< HEAD:packages/orbit-components/src/Toast/ToastRoot.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Toast/ToastRoot.jsx
 
 const StyledWrapper = styled.div<{ $top: number; $left: number; $right: number; $bottom: number }>`
   ${({ theme, $top, $left, $right, $bottom }) => css`

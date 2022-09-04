@@ -2,7 +2,11 @@ import { left } from "../utils/rtl";
 import { Theme, ThemeProps } from "../defaultTheme";
 import { getAlign, getJustify, formatCSS } from "../utils/layout";
 import { TOKENS } from "../utils/layout/consts";
+<<<<<<< HEAD
 import { SpacingToken, Align, Justify } from "./types";
+=======
+import { SpacingToken, Align, Justify } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 type Prop = "align" | "justify" | "spacing";
 

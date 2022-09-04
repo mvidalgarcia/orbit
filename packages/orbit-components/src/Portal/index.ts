@@ -1,7 +1,11 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
 
+<<<<<<< HEAD:packages/orbit-components/src/Portal/index.ts
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Portal/index.js
 
 const Portal = ({ renderInto, children }: Props) => {
   const [el] = React.useState(() => {

@@ -84,3 +84,10 @@ export interface PrimitiveTypes extends HeightProps, Foreground, Background, Box
 }
 
 export type Props = ButtonCommonProps & PrimitiveTypes;
+<<<<<<< HEAD:packages/orbit-components/src/primitives/ButtonPrimitive/types.ts
+=======
+
+declare const StyledButtonPrimitive: React.ComponentType<Props>;
+declare const Button: React.ForwardRefRenderFunction<HTMLButtonElement, Props>;
+export { Button, Button as default, StyledButtonPrimitive };
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/primitives/ButtonPrimitive/index.d.ts

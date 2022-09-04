@@ -1,19 +1,31 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/Itinerary/ItineraryStatus/index.tsx
 import * as Common from "../../common/types";
+=======
+import * as Common from "../../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Itinerary/ItineraryStatus/index.jsx
 import { left, rtlSpacing } from "../../utils/rtl";
 import Text from "../../Text";
 import Stack from "../../Stack";
 import defaultTheme, { ThemeProps } from "../../defaultTheme";
 import { STATUS } from "./consts";
 import getSpacingToken from "../../common/getSpacingToken";
+<<<<<<< HEAD:packages/orbit-components/src/Itinerary/ItineraryStatus/index.tsx
 import { Status } from "../types";
+=======
+import { Status } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Itinerary/ItineraryStatus/index.jsx
 import AlertOctagon from "../../icons/AlertOctagon";
 import Warning from "../../icons/AlertCircle";
 import Info from "../../icons/InformationCircle";
 import Check from "../../icons/CheckCircle";
+<<<<<<< HEAD:packages/orbit-components/src/Itinerary/ItineraryStatus/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Itinerary/ItineraryStatus/index.jsx
 
 const resolveColor = (status: Status, isHeader?: boolean) => ({ theme }: ThemeProps) => {
   const border = {

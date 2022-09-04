@@ -2,7 +2,11 @@ import { TOKENS, TYPES } from "../consts";
 import getButtonLinkTypeToken from "./getButtonLinkTypeToken";
 import { Type } from "../types";
 import { Theme } from "../../defaultTheme";
+<<<<<<< HEAD
 import { IconForeground } from "../../primitives/ButtonPrimitive/types";
+=======
+import { IconForeground } from "../../primitives/ButtonPrimitive/index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 type getButtonLinkIconForegroundType = ({
   type,

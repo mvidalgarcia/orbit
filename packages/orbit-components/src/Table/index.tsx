@@ -6,7 +6,11 @@ import { StyledTableCell } from "./TableCell";
 import { StyledTableBody } from "./TableBody";
 import { TYPE_OPTIONS } from "./consts";
 import defaultTheme from "../defaultTheme";
+<<<<<<< HEAD
 import { Props, Type } from "./types";
+=======
+import { Props, Type } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 const StyledTableOuter = styled.div<{
   showShadows?: boolean;

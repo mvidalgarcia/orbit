@@ -2,8 +2,12 @@ import * as React from "react";
 import styled from "styled-components";
 
 import defaultTheme, { Theme } from "../defaultTheme";
+<<<<<<< HEAD:packages/orbit-components/src/ServiceLogo/index.tsx
 // @ts-expect-error currently it can't resolve mts properly
 import { SIZE_OPTIONS, baseURL } from "./consts.mts";
+=======
+import { SIZE_OPTIONS, baseURL } from "./consts";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/ServiceLogo/index.jsx
 import { Props, Size } from "./index.d";
 
 const getHeight = (theme: Theme, size: Size) => {

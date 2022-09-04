@@ -3,7 +3,11 @@ import getSocialButtonBoxShadow from "./getSocialButtonBoxShadow";
 import { TOKENS } from "../consts";
 import { BUTTON_STATES } from "../../primitives/ButtonPrimitive/common/consts";
 import { Theme } from "../../defaultTheme";
+<<<<<<< HEAD:packages/orbit-components/src/SocialButton/helpers/getSocialButtonStyles.ts
 import { Type } from "../types";
+=======
+import { Type } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/SocialButton/helpers/getSocialButtonStyles.js
 
 interface Output {
   background: string;

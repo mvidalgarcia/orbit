@@ -1,7 +1,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/Tile/components/TileHeader/index.tsx
 import * as Common from "../../../common/types";
+=======
+import * as Common from "../../../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Tile/components/TileHeader/index.jsx
 import defaultTheme from "../../../defaultTheme";
 import { rtlSpacing } from "../../../utils/rtl";
 import Stack from "../../../Stack";

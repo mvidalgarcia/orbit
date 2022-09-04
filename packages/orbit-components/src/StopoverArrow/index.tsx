@@ -4,7 +4,11 @@ import styled, { css } from "styled-components";
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import defaultTheme from "../defaultTheme";
 import STOPS from "./consts";
+<<<<<<< HEAD:packages/orbit-components/src/StopoverArrow/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/StopoverArrow/index.jsx
 
 const StyledArrow = styled.svg`
   vertical-align: middle;

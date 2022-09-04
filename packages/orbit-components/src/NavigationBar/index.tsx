@@ -9,7 +9,11 @@ import ButtonLink from "../ButtonLink";
 import useStateWithCallback from "../hooks/useStateWithCallback";
 import useTranslate from "../hooks/useTranslate";
 import mq from "../utils/mediaQuery";
+<<<<<<< HEAD:packages/orbit-components/src/NavigationBar/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/NavigationBar/index.jsx
 
 const NAVBAR_HEIGHT = { MOBILE: 52, DESKTOP: 64 };
 

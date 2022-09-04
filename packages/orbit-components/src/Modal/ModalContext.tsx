@@ -1,6 +1,10 @@
 import * as React from "react";
 
+<<<<<<< HEAD
 export interface Props {
+=======
+interface Props {
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
   readonly setDimensions?: () => void;
   readonly decideFixedFooter?: () => void;
   readonly setHasModalTitle?: React.Dispatch<React.SetStateAction<boolean>>;

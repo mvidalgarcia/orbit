@@ -5,7 +5,11 @@ import Text from "../../../Text";
 import useTheme from "../../../hooks/useTheme";
 import { resolveAccentColor } from "../helpers";
 import { TYPES } from "../../consts";
+<<<<<<< HEAD:packages/orbit-components/src/Seat/components/SeatLegend/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Seat/components/SeatLegend/index.jsx
 
 const SeatLegend = ({ type = TYPES.DEFAULT, label, dataTest }: Props) => {
   const theme = useTheme();

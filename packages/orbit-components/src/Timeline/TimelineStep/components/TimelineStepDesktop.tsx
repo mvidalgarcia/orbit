@@ -9,7 +9,11 @@ import CustomBadge from "./CustomBadge";
 import Badge from "../../../Badge";
 import Text from "../../../Text";
 import Stack from "../../../Stack";
+<<<<<<< HEAD:packages/orbit-components/src/Timeline/TimelineStep/components/TimelineStepDesktop.tsx
 import { Props as StepProps, Type } from "../types";
+=======
+import { Props as StepProps, Type } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Timeline/TimelineStep/components/TimelineStepDesktop.jsx
 
 const StyledDescription = styled.div`
   max-width: 250px;

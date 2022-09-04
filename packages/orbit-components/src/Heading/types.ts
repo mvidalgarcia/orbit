@@ -3,7 +3,13 @@
 
 import * as React from "react";
 
+<<<<<<< HEAD:packages/orbit-components/src/Heading/types.ts
 import * as Common from "../common/types";
+=======
+import * as Common from "../common/common";
+import DefaultTheme from "../defaultTheme";
+import { Devices } from "../utils/mediaQuery/index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Heading/index.d.ts
 
 export type Type =
   | "display"

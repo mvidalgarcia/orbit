@@ -1,6 +1,10 @@
 import styled, { css } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/Timeline/TimelineStep/primitives/StyledProgressLine.ts
 import { Type } from "../types";
+=======
+import { Type } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Timeline/TimelineStep/primitives/StyledProgressLine.js
 import { left } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 

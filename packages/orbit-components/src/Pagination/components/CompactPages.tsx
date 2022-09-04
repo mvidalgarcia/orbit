@@ -1,10 +1,18 @@
 import * as React from "react";
 
+<<<<<<< HEAD:packages/orbit-components/src/Pagination/components/CompactPages.tsx
 import * as Common from "../../common/types";
 import Pages from "./Pages";
 import PageButtonLink from "./PageButtonLink";
 import MenuMeatballs from "../../icons/MenuMeatballs";
 import { OnPageChange } from "../types";
+=======
+import * as Common from "../../common/common";
+import Pages from "./Pages";
+import PageButtonLink from "./PageButtonLink";
+import MenuMeatballs from "../../icons/MenuMeatballs";
+import { OnPageChange } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Pagination/components/CompactPages.jsx
 
 interface Props {
   pageCount: number;

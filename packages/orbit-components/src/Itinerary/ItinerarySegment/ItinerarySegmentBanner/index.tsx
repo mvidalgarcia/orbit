@@ -5,7 +5,11 @@ import defaultTheme from "../../../defaultTheme";
 import { StyledSeparator } from "../../../Separator";
 import ChevronRight from "../../../icons/ChevronRight";
 import { StyledWrapper as StyledBadgeListWrapper } from "../../ItineraryBadgeList";
+<<<<<<< HEAD:packages/orbit-components/src/Itinerary/ItinerarySegment/ItinerarySegmentBanner/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Itinerary/ItinerarySegment/ItinerarySegmentBanner/index.jsx
 
 const StyledBannerWrapper = styled.div`
   ${({ theme }) => css`

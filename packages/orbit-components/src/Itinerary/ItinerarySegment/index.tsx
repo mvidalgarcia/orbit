@@ -1,14 +1,22 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/Itinerary/ItinerarySegment/index.tsx
 import * as Common from "../../common/types";
+=======
+import * as Common from "../../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Itinerary/ItinerarySegment/index.jsx
 import { ItinerarySegmentContext } from "./context";
 import Stack from "../../Stack";
 import getSpacingToken from "../../common/getSpacingToken";
 import defaultTheme from "../../defaultTheme";
 import handleKeyDown from "../../utils/handleKeyDown";
 import Separator from "../../Separator";
+<<<<<<< HEAD:packages/orbit-components/src/Itinerary/ItinerarySegment/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Itinerary/ItinerarySegment/index.jsx
 
 const StyledWrapper = styled.div<{
   noElevation?: boolean;

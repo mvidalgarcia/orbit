@@ -8,9 +8,15 @@ import ButtonLink from "../../../ButtonLink";
 import InputField, { Input, Prefix } from "../../../InputField";
 import defaultTheme from "../../../defaultTheme";
 import getSpacingToken from "../../../common/getSpacingToken";
+<<<<<<< HEAD:packages/orbit-components/src/deprecated/InputStepper/InputStepperStateless/index.tsx
 import { Props } from "./types";
 
 const StyledInputStepper = styled.div<{ spaceAfter: Props["spaceAfter"] }>`
+=======
+import { Props } from "./index.d";
+
+const StyledInputStepper = styled.div`
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/deprecated/InputStepper/InputStepperStateless/index.jsx
   width: 100%;
   margin-bottom: ${getSpacingToken};
   font-family: ${({ theme }) => theme.orbit.fontFamily};

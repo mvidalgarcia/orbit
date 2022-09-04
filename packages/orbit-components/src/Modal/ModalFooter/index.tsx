@@ -9,7 +9,11 @@ import { ModalContext } from "../ModalContext";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
+<<<<<<< HEAD:packages/orbit-components/src/Modal/ModalFooter/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Modal/ModalFooter/index.jsx
 
 const StyledChild = styled.div<{ flex?: Props["flex"] }>`
   ${({ theme, flex }) => css`
@@ -74,10 +78,13 @@ const wrappedChildren = (children: React.ReactNode, flex: Props["flex"]) => {
     if (child) {
       return (
         <StyledChild flex={getChildFlex(flex, key)}>
+          {/* @ts-expect-error FIXME */}
           {React.cloneElement(child, {
+            /* @ts-expect-error FIXME */
             ref: child.ref
               ? node => {
                   // Call the original ref, if any
+                  /* @ts-expect-error FIXME */
                   const { ref } = child;
                   if (typeof ref === "function") {
                     ref(node);

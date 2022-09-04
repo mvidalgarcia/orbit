@@ -4,7 +4,11 @@ import styled, { css } from "styled-components";
 import { StyledTileWrapper } from "../Tile/components/TileWrapper";
 import defaultTheme from "../defaultTheme";
 import { StyledSlide } from "../utils/Slide";
+<<<<<<< HEAD:packages/orbit-components/src/TileGroup/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/TileGroup/index.jsx
 
 const StyledTileGroup = styled.div`
   ${({ theme }) => css`

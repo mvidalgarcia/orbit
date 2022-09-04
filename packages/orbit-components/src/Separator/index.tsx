@@ -1,11 +1,19 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/Separator/index.tsx
 import * as Common from "../common/types";
 import defaultTheme, { Theme } from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
 import { left, right } from "../utils/rtl";
 import { Props, Indent, Align } from "./types";
+=======
+import * as Common from "../common/common";
+import defaultTheme, { Theme } from "../defaultTheme";
+import getSpacingToken from "../common/getSpacingToken";
+import { left, right } from "../utils/rtl";
+import { Props, Indent, Align } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Separator/index.jsx
 
 function capitalize(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);

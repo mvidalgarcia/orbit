@@ -1,13 +1,21 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/Skeleton/Svg.tsx
 import * as Common from "../common/types";
+=======
+import * as Common from "../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Skeleton/Svg.jsx
 import { useRandomIdSeed } from "../hooks/useRandomId";
 import { resolveHeight, resolveValue, resolvePulseAnimation } from "./helpers";
 import useTheme from "../hooks/useTheme";
 import defaultTheme from "../defaultTheme";
 import getSpacingToken from "../common/getSpacingToken";
+<<<<<<< HEAD:packages/orbit-components/src/Skeleton/Svg.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Skeleton/Svg.jsx
 
 const StyledSvg = styled(({ className, children, ariaLabelledby, dataTest, id, viewBox }) => (
   <svg

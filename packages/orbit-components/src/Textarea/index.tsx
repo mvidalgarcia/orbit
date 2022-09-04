@@ -1,7 +1,11 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/Textarea/index.tsx
 import * as Common from "../common/types";
+=======
+import * as Common from "../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Textarea/index.jsx
 import defaultTheme, { Theme } from "../defaultTheme";
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import FormLabel from "../FormLabel";
@@ -12,7 +16,11 @@ import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
+<<<<<<< HEAD:packages/orbit-components/src/Textarea/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Textarea/index.jsx
 
 const Field = styled.label<{ fullHeight?: boolean; spaceAfter?: Common.SpaceAfterSizes }>`
   font-family: ${({ theme }) => theme.orbit.fontFamily};

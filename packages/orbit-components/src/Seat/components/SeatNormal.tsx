@@ -4,7 +4,11 @@ import styled from "styled-components";
 import defaultTheme from "../../defaultTheme";
 import useTheme from "../../hooks/useTheme";
 import { TYPES } from "../consts";
+<<<<<<< HEAD:packages/orbit-components/src/Seat/components/SeatNormal.tsx
 import { Props } from "../types";
+=======
+import { Props } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Seat/components/SeatNormal.jsx
 import { resolveFillColor, resolveAccentColor, resolveTextColor } from "./helpers";
 
 export const StyledPath = styled.path`

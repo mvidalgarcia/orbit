@@ -9,7 +9,11 @@ import { fadeIn, fadeOut, lightAnimation, getPositionStyle, createRectRef } from
 import useTheme from "../hooks/useTheme";
 import useSwipe from "./hooks/useSwipe";
 import mergeRefs from "../utils/mergeRefs";
+<<<<<<< HEAD:packages/orbit-components/src/Toast/ToastMessage.tsx
 import { Toast as Props } from "./types";
+=======
+import { Toast as Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Toast/ToastMessage.jsx
 
 const StyledWrapper = styled(({ className, children, ariaLive }) => (
   <div className={className} aria-live={ariaLive} role="status">

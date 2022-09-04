@@ -11,3 +11,9 @@ export interface Props {
   readonly dictionary?: Translations;
   readonly children: React.ReactNode;
 }
+<<<<<<< HEAD:packages/orbit-components/src/ThemeProvider/types.ts
+=======
+
+declare const ThemeProvider: React.FunctionComponent<Props>;
+export { ThemeProvider, ThemeProvider as default };
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/ThemeProvider/index.d.ts

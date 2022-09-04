@@ -5,7 +5,11 @@ import defaultTheme from "../defaultTheme";
 import AlertCircle from "../icons/AlertCircle";
 import InformationCircle from "../icons/InformationCircle";
 import { rtlSpacing } from "../utils/rtl";
+<<<<<<< HEAD:packages/orbit-components/src/FormLabel/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/FormLabel/index.jsx
 
 const StyledAsterisk = styled.span<{ filled?: boolean }>`
   ${({ theme, filled }) => css`

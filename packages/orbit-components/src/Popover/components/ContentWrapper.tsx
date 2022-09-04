@@ -4,7 +4,11 @@ import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 import { usePopper } from "react-popper";
 import type { Placement } from "@popperjs/core/lib/enums";
 
+<<<<<<< HEAD:packages/orbit-components/src/Popover/components/ContentWrapper.tsx
 import * as Common from "../../common/types";
+=======
+import * as Common from "../../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Popover/components/ContentWrapper.jsx
 import defaultTheme from "../../defaultTheme";
 import mq from "../../utils/mediaQuery";
 import Button from "../../Button";
@@ -17,7 +21,11 @@ import { ModalContext } from "../../Modal/ModalContext";
 import { StyledButtonPrimitive } from "../../primitives/ButtonPrimitive";
 import { PLACEMENTS } from "../../common/consts";
 import boundingClientRect from "../../utils/boundingClientRect";
+<<<<<<< HEAD:packages/orbit-components/src/Popover/components/ContentWrapper.tsx
 import { Offset } from "../types";
+=======
+import { Offset } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Popover/components/ContentWrapper.jsx
 
 const mobileTop = ({ theme }) => theme.orbit.spaceXLarge;
 const popoverPadding = ({ theme }) => theme.orbit.spaceMedium;

@@ -14,8 +14,13 @@ import defaultTheme from "../../../defaultTheme";
 import { StyledTextLink } from "../../../TextLink";
 import transition from "../../../utils/transition";
 import FOCUSABLE_ELEMENT_SELECTORS from "../../../hooks/useFocusTrap/consts";
+<<<<<<< HEAD:packages/orbit-components/src/primitives/TooltipPrimitive/components/TooltipContent.tsx
 import { Props } from "./types";
 import { Size } from "../types";
+=======
+import { Props } from "./TooltipContent.d";
+import { Size } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/primitives/TooltipPrimitive/components/TooltipContent.jsx
 
 const StyledTooltip = styled.div`
   width: 100%;
@@ -54,9 +59,15 @@ const StyledTooltipWrapper = styled.div<{
   contentHeight: number;
   error?: boolean;
   help?: boolean;
+<<<<<<< HEAD:packages/orbit-components/src/primitives/TooltipPrimitive/components/TooltipContent.tsx
   size: Size;
 }>`
   ${({ theme, shown, popper, contentHeight, error, help, size }) => css`
+=======
+  size?: Size;
+}>`
+  ${({ theme, shown, popper }) => css`
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/primitives/TooltipPrimitive/components/TooltipContent.jsx
     display: block;
     ${{ ...popper }};
     width: auto;

@@ -6,7 +6,11 @@ import Stack from "../Stack";
 import ButtonLink from "../Button";
 import defaultTheme from "../defaultTheme";
 import Translate from "../Translate";
+<<<<<<< HEAD:packages/orbit-components/src/SkipNavigation/index.tsx
 import { Props, MappedOptions } from "./types";
+=======
+import { Props, MappedOptions } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/SkipNavigation/index.jsx
 
 const StyledNavigation = styled.div<{ show?: boolean }>`
   background-color: ${({ theme }) => theme.orbit.paletteCloudLight}; /* TODO: Token */

@@ -11,8 +11,13 @@ import { StyledModalSection } from "../ModalSection";
 import { left, right, rtlSpacing } from "../../utils/rtl";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
+<<<<<<< HEAD:packages/orbit-components/src/Modal/ModalHeader/index.tsx
 import { Props } from "./types";
 import { Type } from "../../Heading/types";
+=======
+import { Props } from "./index.d";
+import { Type } from "../../Heading/index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Modal/ModalHeader/index.jsx
 
 const getModalHeading = (type: Type, token: string) => ({
   theme,

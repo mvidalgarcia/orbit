@@ -1,6 +1,10 @@
 import { css, FlattenInterpolation, ThemeProps } from "styled-components";
 
+<<<<<<< HEAD:packages/orbit-components/src/ErrorFormTooltip/Tooltip/helpers/resolvePlacement.ts
 import * as Common from "../../../common/types";
+=======
+import * as Common from "../../../common/common";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/ErrorFormTooltip/Tooltip/helpers/resolvePlacement.js
 import type { Theme } from "../../../defaultTheme";
 import { left } from "../../../utils/rtl";
 

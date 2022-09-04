@@ -5,7 +5,11 @@ import defaultTheme, { Theme } from "../../defaultTheme";
 import { ALIGN_OPTIONS } from "./consts";
 import { TYPE_AS } from "../consts";
 import { textAlign } from "../../utils/rtl";
+<<<<<<< HEAD:packages/orbit-components/src/Table/TableCell/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Table/TableCell/index.jsx
 
 interface StyledProps extends Partial<Props> {
   theme: Theme;

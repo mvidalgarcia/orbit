@@ -10,7 +10,11 @@ import Stack from "../../../Stack";
 import StyledIconWrapper from "../primitives/StyledIconWrapper";
 import StyledProgressLine from "../primitives/StyledProgressLine";
 import StyledText from "../primitives/StyledText";
+<<<<<<< HEAD:packages/orbit-components/src/Timeline/TimelineStep/components/TimelineStepMobile.tsx
 import { Props as StepProps, Type } from "../types";
+=======
+import { Props as StepProps, Type } from "../index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Timeline/TimelineStep/components/TimelineStepMobile.jsx
 
 const StyledIndent = styled.div<{ isText?: boolean }>`
   padding-left: ${({ theme, isText }) => !isText && theme.orbit.spaceXSmall};

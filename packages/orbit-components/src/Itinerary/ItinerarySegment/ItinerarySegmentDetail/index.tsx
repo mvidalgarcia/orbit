@@ -15,7 +15,11 @@ import { useRandomIdSeed } from "../../../hooks/useRandomId";
 import { usePart } from "../context";
 import { useWidth } from "../../context";
 import ItineraryIcon from "../ItineraryIcon";
+<<<<<<< HEAD:packages/orbit-components/src/Itinerary/ItinerarySegment/ItinerarySegmentDetail/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Itinerary/ItinerarySegment/ItinerarySegmentDetail/index.jsx
 
 const StyledWrapper = styled.div`
   width: 100%;

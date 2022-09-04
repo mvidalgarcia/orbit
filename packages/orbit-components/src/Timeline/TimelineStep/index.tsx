@@ -8,7 +8,11 @@ import { useStatuses, useStep } from "../TimelineContext";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import TimelineStepDesktop from "./components/TimelineStepDesktop";
 import TimelineStepMobile from "./components/TimelineStepMobile";
+<<<<<<< HEAD:packages/orbit-components/src/Timeline/TimelineStep/index.tsx
 import { Props } from "./types";
+=======
+import { Props } from "./index.d";
+>>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Timeline/TimelineStep/index.jsx
 import { Type } from "./consts";
 
 const TypeIcon = ({ type }) => {
