@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { render, screen } from "@testing-library/react";
 
@@ -9,6 +8,7 @@ import Button from "../../Button";
 import { DIRECTIONS, SPACINGS } from "../../utils/layout/consts";
 import { QUERIES } from "../../utils/mediaQuery/consts";
 import getSpacing from "../helpers/getSpacing";
+import { Justify, Spacing, Align } from "../index.d";
 
 describe("Stack", () => {
   it("should have expected DOM output", () => {
@@ -98,12 +98,12 @@ describe("Stack", () => {
     ["around", "space-around"],
   ])("should change justify %s", (justify, expected) => {
     render(
-      <Stack flex justify={justify} dataTest="test">
+      <Stack flex justify={justify as Justify} dataTest="test">
         <div>kek</div>
         <div>bur</div>
       </Stack>,
     );
-
+    // @ts-expect-error expected
     expect(screen.getByTestId("test")).toHaveStyleRule("justify-content", expected);
   });
 
@@ -115,7 +115,7 @@ describe("Stack", () => {
     ["baseline", "baseline"],
   ])("should change align %s", (align, expected) => {
     render(
-      <Stack flex align={align} direction="column" dataTest="test">
+      <Stack flex align={align as Align} direction="column" dataTest="test">
         <div>kek</div>
         <div>bur</div>
       </Stack>,
@@ -127,8 +127,7 @@ describe("Stack", () => {
   Object.entries(SPACINGS).forEach(([name, spacing]) => {
     it(`should change spacing ${name}`, () => {
       render(
-        // $FlowIssue: mixed
-        <Stack flex spacing={spacing} dataTest="test">
+        <Stack flex spacing={spacing as Spacing} dataTest="test">
           <div>kek</div>
           <div>bur</div>
         </Stack>,
@@ -136,7 +135,7 @@ describe("Stack", () => {
 
       expect(screen.getByTestId("test")).toHaveStyle({
         // $FlowIssue: mixed
-        gap: `${getSpacing({ theme })[spacing]}`,
+        gap: `${getSpacing(theme)[spacing]}`,
       });
     });
   });
@@ -146,7 +145,10 @@ describe("Stack with every media query", () => {
   it.each(Object.entries(QUERIES))("should have styles for each mediaquery: %s", (name, query) => {
     const dataTest = `${query}-test`;
 
-    const input = {
+    const input: Record<
+      "mediumMobile" | "largeMobile" | "tablet" | "desktop" | "largeDesktop",
+      Spacing
+    > = {
       mediumMobile: `XXSmall`,
       largeMobile: `XSmall`,
       tablet: `small`,
@@ -169,6 +171,6 @@ describe("Stack with every media query", () => {
       </Stack>,
     );
 
-    expect(screen.getByTestId(dataTest)).toHaveStyleRule("gap", expected[query]);
+    expect(screen.getByTestId(dataTest)).toHaveStyle({ gap: expected[query] });
   });
 });

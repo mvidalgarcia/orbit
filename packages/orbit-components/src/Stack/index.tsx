@@ -7,15 +7,9 @@ import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "../utils/layout/consts";
 import { DEVICES } from "../utils/mediaQuery/consts";
 import { isDefined } from "../utils/layout";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
-<<<<<<< HEAD:packages/orbit-components/src/Stack/index.jsx
 import getGap from "./helpers/getGap";
 import shouldUseFlex from "./helpers/shouldUseFlex";
-
-import type { Props } from ".";
-=======
-import getChildrenMargin from "./helpers/getChildrenMargin";
 import { Props } from "./index.d";
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Stack/index.tsx
 
 const StyledStack = styled(({ className, element: Element, children, dataTest }) => (
   <Element className={className} data-test={dataTest}>
