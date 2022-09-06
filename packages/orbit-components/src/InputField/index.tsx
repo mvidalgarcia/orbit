@@ -400,7 +400,7 @@ const InputField = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
     labelRef,
     iconRef,
     handleFocus,
-  } = useErrorTooltip({ onFocus });
+  } = useErrorTooltip<HTMLInputElement, HTMLDivElement>({ onFocus });
 
   const shown = tooltipShown || tooltipShownHover;
   const fieldRef = React.useRef<HTMLElement | null>(null);

@@ -16,7 +16,7 @@ const StyledLinkList = styled.ul`
 =======
 import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
 import { Props } from "./index.d";
-import { Spacing } from "../Stack";
+import { Spacing } from "../Stack/index.d";
 
 const StyledLinkList = styled.ul<{ $direction?: "column" | "row"; $indent?: boolean }>`
   ${({ $direction, $indent, theme }) => css`
@@ -47,9 +47,10 @@ const StyledNavigationLinkListChild = styled(({ theme, direction, ...props }) =>
 const resolveSpacings = ({
   $spacing,
   $direction,
-  ...props
+  theme,
 }: {
   $spacing?: Spacing;
+  theme: typeof defaultTheme;
   $direction?: "column" | "row";
 }) => {
   const margin =
@@ -57,7 +58,7 @@ const resolveSpacings = ({
     $direction &&
     String(getDirectionSpacingTemplate($direction)).replace(
       "__spacing__",
-      getSpacing(props)[$spacing],
+      getSpacing(theme)[$spacing],
     );
 
   return css`
