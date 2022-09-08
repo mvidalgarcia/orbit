@@ -15,8 +15,8 @@ const StyledLinkList = styled.ul`
   ${({ $direction, indent, theme, $spacing }) => css`
 =======
 import getDirectionSpacingTemplate from "../Stack/helpers/getDirectionSpacingTemplate";
-import { Props } from "./index.d";
-import { Spacing } from "../Stack/index.d";
+import { Props } from "./types";
+import { Spacing } from "../Stack/types";
 
 const StyledLinkList = styled.ul<{ $direction?: "column" | "row"; $indent?: boolean }>`
   ${({ $direction, $indent, theme }) => css`

@@ -9,7 +9,7 @@ import { isDefined } from "../utils/layout";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
 import getGap from "./helpers/getGap";
 import shouldUseFlex from "./helpers/shouldUseFlex";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const StyledStack = styled(({ className, element: Element, children, dataTest }) => (
   <Element className={className} data-test={dataTest}>
@@ -23,12 +23,12 @@ const StyledStack = styled(({ className, element: Element, children, dataTest })
       viewport in mediaQueries
         ? mediaQueries[viewport](css`
             ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
-            ${getGap({ viewport, index, devices })}
+            ${getGap({ index, devices })}
           `)
         : viewport === "smallMobile" &&
           css`
             ${getViewportFlexStyles(viewport)};
-            ${getGap({ viewport, index, devices })}
+            ${getGap({ index, devices })}
           `,
     )};
 `;

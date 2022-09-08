@@ -8,14 +8,7 @@ import { rtlSpacing } from "../utils/rtl";
 import getFieldDataState from "../common/getFieldDataState";
 import cloneWithTooltip from "../utils/cloneWithTooltip";
 import media from "../utils/mediaQuery";
-<<<<<<< HEAD:packages/orbit-components/src/Radio/index.jsx
-
-import type { Props } from ".";
-
-const getBorderColor = () => ({ theme, hasError, disabled, checked }) => {
-  if (disabled) return theme.orbit.paletteCloudNormal;
-=======
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 const getBorderColor = () => ({
   theme,
@@ -28,18 +21,13 @@ const getBorderColor = () => ({
   disabled?: boolean;
   checked?: boolean;
 }) => {
-  if (disabled) return theme.orbit.paletteCloudDarker;
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Radio/index.tsx
+  if (disabled) return theme.orbit.paletteCloudNormal;
   if (checked) return theme.orbit.paletteBlueNormal;
   if (hasError && !disabled && !checked) return theme.orbit.borderColorCheckboxRadioError;
 
   return theme.orbit.borderColorCheckboxRadio;
 };
 
-<<<<<<< HEAD:packages/orbit-components/src/Radio/index.jsx
-const getBackground = () => ({ theme, disabled, checked }) => {
-  if (disabled && checked) return theme.orbit.paletteCloudNormal;
-=======
 const getBackground = () => ({
   theme,
   disabled,
@@ -49,9 +37,7 @@ const getBackground = () => ({
   disabled?: boolean;
   checked?: boolean;
 }) => {
-  if (disabled && checked) return theme.orbit.paletteCloudDarker;
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Radio/index.tsx
-  if (disabled && !checked) return theme.orbit.paletteCloudNormal;
+  if (disabled) return theme.orbit.paletteCloudNormal;
 
   return checked ? theme.orbit.paletteBlueNormal : theme.orbit.backgroundInput;
 };
@@ -241,6 +227,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         hasError={hasError}
       />
       {cloneWithTooltip(
+        // @ts-expect-error TODO
         tooltip,
         <StyledIconContainer disabled={disabled} checked={checked}>
           <Glyph disabled={disabled} />

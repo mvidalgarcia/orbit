@@ -7,7 +7,7 @@ import Portal from "../../Portal";
 import useRandomId from "../../hooks/useRandomId";
 import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
-import { Props } from "./index.d";
+import { Props } from "./types";
 
 <<<<<<< HEAD:packages/orbit-components/src/primitives/TooltipPrimitive/index.jsx
 import type { Props } from ".";

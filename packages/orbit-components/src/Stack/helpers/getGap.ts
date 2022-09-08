@@ -1,13 +1,16 @@
-// @flow
-import { css } from "styled-components";
+import { css, FlattenInterpolation, ThemeProps } from "styled-components";
 
 import getSpacing from "./getSpacing";
 import getProperty from "./getProperty";
-import { QUERIES } from "../../utils/mediaQuery/consts";
-import type { GetGap } from "./getGap";
 import { rtlSpacing } from "../../utils/rtl";
 import { DIRECTIONS } from "../../utils/layout/consts";
-import type { Direction, Spacing } from "..";
+import { Direction, Spacing, Props } from "../types";
+import defaultTheme from "../../defaultTheme";
+import { Devices } from "../../utils/mediaQuery/types";
+
+interface PropsWithTheme extends Props {
+  theme: typeof defaultTheme;
+}
 
 const getDirectionSpacingTemplate = (direction: Direction | Spacing): string => {
   switch (direction) {
@@ -22,37 +25,35 @@ const getDirectionSpacingTemplate = (direction: Direction | Spacing): string => 
   }
 };
 
-const getGap: GetGap = ({ viewport, index, devices }) => props => {
-  if (props[viewport] || viewport === QUERIES.DESKTOP) {
-    const spacing = getProperty("spacing", { index, devices }, props);
-    const direction = getProperty("direction", { index, devices }, props);
-    const gap = spacing && direction && getSpacing(props)[spacing];
+const getGap = ({ index, devices }: { index: number; devices: Devices[] }) => (
+  props: PropsWithTheme,
+): FlattenInterpolation<ThemeProps<any>> | null => {
+  const spacing = getProperty("spacing", { index, devices }, props);
+  const direction = getProperty("direction", { index, devices }, props) as Direction;
+  const gap = spacing && direction && getSpacing(props.theme)[spacing];
 
-    const margin =
-      spacing &&
-      direction &&
-      String(getDirectionSpacingTemplate(direction)).replace(
-        "__spacing__",
-        getSpacing(props)[spacing],
-      );
+  const margin =
+    spacing &&
+    direction &&
+    String(getDirectionSpacingTemplate(direction)).replace(
+      "__spacing__",
+      getSpacing(props.theme)[spacing],
+    );
 
-    if (props.flex) {
-      return css`
-        gap: ${gap};
-      `;
-    }
-
+  if (props.flex) {
     return css`
-      & > * {
-        margin: ${margin && rtlSpacing(margin)}!important;
-        &:last-child {
-          margin: 0 !important;
-        }
-      }
+      gap: ${gap};
     `;
   }
 
-  return null;
+  return css`
+    & > * {
+      margin: ${margin && rtlSpacing(margin)}!important;
+      &:last-child {
+        margin: 0 !important;
+      }
+    }
+  `;
 };
 
 export default getGap;
