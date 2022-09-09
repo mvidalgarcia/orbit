@@ -1,13 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 
-<<<<<<< HEAD:packages/orbit-components/src/Slider/components/Histogram/index.tsx
 import { Value } from "../../types";
 import { Translation } from "../../../common/types";
-=======
-import { Value } from "../../index.d";
-import { Translation } from "../../../common/common";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Slider/components/Histogram/index.jsx
 import defaultTheme from "../../../defaultTheme";
 import Loading from "../../../Loading";
 

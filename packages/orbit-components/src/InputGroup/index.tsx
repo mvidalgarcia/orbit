@@ -13,11 +13,7 @@ import useRandomId, { useRandomIdSeed } from "../hooks/useRandomId";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import getFieldDataState from "../common/getFieldDataState";
 import mq from "../utils/mediaQuery";
-<<<<<<< HEAD:packages/orbit-components/src/InputGroup/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/InputGroup/index.jsx
 
 const getToken = (name: string) => ({
   theme,

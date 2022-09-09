@@ -1,17 +1,10 @@
 import getSizeToken from "./getSizeToken";
 import getPadding from "./getPadding";
 import { SIZE_OPTIONS } from "./consts";
-<<<<<<< HEAD
 import { Size, HeightProps, ButtonCommonProps } from "../types";
 import { Theme } from "../../../defaultTheme";
 
 export interface Params
-=======
-import { Size, HeightProps, ButtonCommonProps } from "../index.d";
-import { Theme } from "../../../defaultTheme";
-
-interface Params
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
   extends Pick<
     ButtonCommonProps,
     "iconRight" | "contentAlign" | "contentWidth" | "iconLeft" | "width" | "iconRight" | "children"
@@ -20,11 +13,7 @@ interface Params
   theme: Theme;
 }
 
-<<<<<<< HEAD
 export interface Output
-=======
-interface Output
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
   extends HeightProps,
     Pick<ButtonCommonProps, "contentAlign" | "contentWidth" | "width"> {
   fontWeight: string;

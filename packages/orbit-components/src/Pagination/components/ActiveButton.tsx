@@ -1,11 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-<<<<<<< HEAD
 import * as Common from "../../common/types";
-=======
-import * as Common from "../../common/common";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 import Button from "../../Button";
 import defaultTheme from "../../defaultTheme";
 

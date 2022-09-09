@@ -5,13 +5,8 @@ import defaultTheme from "../defaultTheme";
 import Grid from "../utils/Grid";
 import { LAYOUT_SETTINGS } from "./consts";
 import mq from "../utils/mediaQuery";
-<<<<<<< HEAD:packages/orbit-components/src/Layout/index.tsx
 import { Props, Type } from "./types";
 import { Props as LayoutColumnProps } from "./LayoutColumn/types";
-=======
-import { Props, Type } from "./index.d";
-import { Props as LayoutColumnProps } from "./LayoutColumn/index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Layout/index.jsx
 
 const getChildrenProps = (type: Type, key: string) => {
   if (LAYOUT_SETTINGS[type].layoutColumns && LAYOUT_SETTINGS[type].layoutColumns[key]) {

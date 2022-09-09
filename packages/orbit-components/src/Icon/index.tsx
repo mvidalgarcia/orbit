@@ -3,11 +3,7 @@ import styled, { css } from "styled-components";
 
 import { ICON_SIZES, ICON_COLORS } from "./consts";
 import defaultTheme from "../defaultTheme";
-<<<<<<< HEAD:packages/orbit-components/src/Icon/index.tsx
 import { GetSize, FactoryProps } from "./types";
-=======
-import { GetSize, FactoryProps } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Icon/index.jsx
 
 export const getSize: GetSize = size => ({ theme }) => {
   const tokens = {

@@ -7,11 +7,7 @@ import { PLACEMENTS } from "../common/consts";
 import PopoverContent from "./components/ContentWrapper";
 import Portal from "../Portal";
 import handleKeyDown from "../utils/handleKeyDown";
-<<<<<<< HEAD:packages/orbit-components/src/Popover/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Popover/index.jsx
 
 const StyledPopoverChild = styled.div`
   position: relative;
@@ -68,10 +64,6 @@ const Popover = ({
   const handleOut = React.useCallback(
     (ev: React.SyntheticEvent<HTMLElement>) => {
       // If open prop is present ignore custom handler
-<<<<<<< HEAD:packages/orbit-components/src/Popover/index.tsx
-=======
-      // $FlowFixMe: TODO
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Popover/index.jsx
       if (ref.current && !ref.current.contains(ev.currentTarget)) {
         if (typeof opened === "undefined") {
           setShown(false);

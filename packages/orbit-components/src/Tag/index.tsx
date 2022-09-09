@@ -1,11 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-<<<<<<< HEAD:packages/orbit-components/src/Tag/index.tsx
 import * as Common from "../common/types";
-=======
-import * as Common from "../common/common";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Tag/index.jsx
 import defaultTheme, { Theme } from "../defaultTheme";
 import { left } from "../utils/rtl";
 import CloseCircle from "../icons/CloseCircle";
@@ -13,11 +9,7 @@ import { SIZES, STATES, TYPES } from "./consts";
 import KEY_CODE_MAP from "../common/keyMaps";
 import resolveColor from "./helpers/resolveColor";
 import resolveCircleColor from "./helpers/resolveCircleColor";
-<<<<<<< HEAD:packages/orbit-components/src/Tag/index.tsx
 import { Props, Type } from "./types";
-=======
-import { Props, Type } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Tag/index.jsx
 
 const getFontSize = ({ theme, size }: { theme: Theme; size: Props["size"] }): string | null => {
   const tokens = {

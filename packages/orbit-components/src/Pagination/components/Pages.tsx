@@ -1,16 +1,9 @@
 import * as React from "react";
 
-<<<<<<< HEAD
 import * as Common from "../../common/types";
 import ActiveButton from "./ActiveButton";
 import PageButtonLink from "./PageButtonLink";
 import { OnPageChange } from "../types";
-=======
-import * as Common from "../../common/common";
-import ActiveButton from "./ActiveButton";
-import PageButtonLink from "./PageButtonLink";
-import { OnPageChange } from "../index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 interface Props {
   enlargement?: number;

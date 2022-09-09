@@ -33,9 +33,3 @@ export interface State {
   handleIndex: number | null;
   focused: boolean;
 }
-<<<<<<< HEAD:packages/orbit-components/src/Slider/types.ts
-=======
-
-declare const Slider: React.FunctionComponent<Props>;
-export { Slider, Slider as default };
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Slider/index.d.ts

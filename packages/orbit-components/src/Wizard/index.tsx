@@ -13,11 +13,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import useTranslate from "../hooks/useTranslate";
 import defaultTheme from "../defaultTheme";
 import mq from "../utils/mediaQuery";
-<<<<<<< HEAD:packages/orbit-components/src/Wizard/index.tsx
 import { Props, WizardStepProps } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Wizard/index.jsx
 
 const unstyledListMixin = css`
   list-style-type: none;

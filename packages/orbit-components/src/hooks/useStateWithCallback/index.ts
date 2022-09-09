@@ -1,8 +1,11 @@
 import { useState, useCallback } from "react";
 
-import UseStateWithCallback from "./index.d";
+type Return<S> = [S, (arg0: S) => void];
 
-const useStateWithCallback: typeof UseStateWithCallback = (defaultValue, callback) => {
+const useStateWithCallback = <S>(
+  defaultValue: S,
+  callback?: (arg0: S) => void | Promise<any>,
+): Return<S> => {
   const [state, setState] = useState(defaultValue);
 
   const setStateWithCallback = useCallback(

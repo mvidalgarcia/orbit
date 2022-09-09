@@ -4,11 +4,7 @@ import styled, { css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import Circle from "../icons/Circle";
 import handleKeyDown from "../utils/handleKeyDown";
-<<<<<<< HEAD:packages/orbit-components/src/Switch/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Switch/index.jsx
 
 const StyledSwitch = styled.label`
   display: inline-block;

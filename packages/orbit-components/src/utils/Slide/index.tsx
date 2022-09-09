@@ -3,11 +3,7 @@ import styled from "styled-components";
 
 import transition, { TransitionDuration } from "../transition";
 import defaultTheme from "../../defaultTheme";
-<<<<<<< HEAD:packages/orbit-components/src/utils/Slide/index.tsx
 import { Props, State } from "./types";
-=======
-import { Props, State } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/utils/Slide/index.jsx
 
 const getMaxHeight = ({ maxHeight }) => {
   if (maxHeight === 0) return `0px`;

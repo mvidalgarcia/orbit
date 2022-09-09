@@ -2,11 +2,7 @@ import { keyframes, css, FlattenSimpleInterpolation, Keyframes } from "styled-co
 
 import { ThemeProps } from "../defaultTheme";
 import { translate3d } from "../utils/rtl";
-<<<<<<< HEAD:packages/orbit-components/src/Toast/helpers.ts
 import { Placement } from "./types";
-=======
-import { Placement } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Toast/helpers.js
 
 export const lightAnimation = ({ theme }: ThemeProps): Keyframes => keyframes`
   0% {

@@ -7,11 +7,7 @@ import Plus from "../../icons/Plus";
 import defaultTheme from "../../defaultTheme";
 import Button from "../../primitives/ButtonPrimitive";
 import useTheme from "../../hooks/useTheme";
-<<<<<<< HEAD:packages/orbit-components/src/Stepper/StepperStateless/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Stepper/StepperStateless/index.jsx
 
 const getMaxWidth = ({ maxWidth }) => {
   if (typeof maxWidth === "string") return maxWidth;

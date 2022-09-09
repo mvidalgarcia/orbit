@@ -5,11 +5,7 @@ import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import Portal from "../../Portal";
 import { StyledTooltipChildren } from "../TooltipPrimitive";
 import DialogContent from "./components/DialogContent";
-<<<<<<< HEAD:packages/orbit-components/src/primitives/MobileDialogPrimitive/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/primitives/MobileDialogPrimitive/index.jsx
 
 const MobileDialog = ({
   children,

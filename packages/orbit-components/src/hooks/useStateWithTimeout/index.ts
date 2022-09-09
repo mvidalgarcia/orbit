@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 
-import UseStateWithTimeout from "./index.d";
+type Return<S> = [S, (arg0: S) => void, (arg0: S) => void, () => void];
 
-const useStateWithTimeout: typeof UseStateWithTimeout = (defaultValue, timeout) => {
+const useStateWithTimeout = <T>(defaultValue: T, timeout: number): Return<T> => {
   const [state, setState] = useState(defaultValue);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const setStateWithTimeout = useCallback(

@@ -1,13 +1,8 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-<<<<<<< HEAD:packages/orbit-components/src/Select/index.tsx
 import * as Common from "../common/types";
 import { DataAttrs } from "../common/types";
-=======
-import * as Common from "../common/common";
-import { DataAttrs } from "../common/common";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Select/index.jsx
 import defaultTheme, { Theme } from "../defaultTheme";
 import FormLabel from "../FormLabel";
 import ChevronDown from "../icons/ChevronDown";
@@ -19,11 +14,7 @@ import getFieldDataState from "../common/getFieldDataState";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
 import formElementFocus from "../InputField/helpers/formElementFocus";
 import mq from "../utils/mediaQuery";
-<<<<<<< HEAD:packages/orbit-components/src/Select/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Select/index.jsx
 
 const getSelectSize = ({ theme, size }: { theme: Theme; size: Common.Size }) => {
   const tokens = {
@@ -313,19 +304,11 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
     handleFocus,
   } = useErrorTooltip<HTMLSelectElement, HTMLDivElement>({ onFocus });
 
-<<<<<<< HEAD:packages/orbit-components/src/Select/index.tsx
   const inputRef = React.useRef<HTMLLabelElement | null>(null);
-=======
-  const inputRef = React.useRef<HTMLElement | null>(null);
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Select/index.jsx
 
   const shown = tooltipShown || tooltipShownHover;
 
   return (
-<<<<<<< HEAD:packages/orbit-components/src/Select/index.tsx
-=======
-    // @ts-expect-error TODO
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Select/index.jsx
     <StyledLabel spaceAfter={spaceAfter} ref={inputRef} $width={width}>
       {label && (
         <FormLabel

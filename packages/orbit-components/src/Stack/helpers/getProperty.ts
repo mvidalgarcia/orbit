@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import { Props } from "../types";
 import { Devices } from "../../utils/mediaQuery/types";
-=======
-import { Props } from "../index.d";
-import { Devices } from "../../utils/mediaQuery/index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 type GetProperty = (
   property: "spacing" | "direction",

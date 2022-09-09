@@ -18,11 +18,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import FOCUSABLE_ELEMENT_SELECTORS from "../hooks/useFocusTrap/consts";
 import usePrevious from "../hooks/usePrevious";
 import useLockScrolling from "../hooks/useLockScrolling";
-<<<<<<< HEAD:packages/orbit-components/src/Modal/index.tsx
 import { Instance, Props } from "./types";
-=======
-import { Instance, Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Modal/index.jsx
 
 const getSizeToken = ({ size, theme }: { size: Props["size"]; theme: typeof defaultTheme }) => {
   const tokens = {

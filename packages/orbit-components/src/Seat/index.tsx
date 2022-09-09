@@ -23,11 +23,7 @@ import {
 } from "./components/helpers";
 import SeatCircle, { StyledCirclePath } from "./components/SeatCircle";
 import { SIZE_OPTIONS, TYPES } from "./consts";
-<<<<<<< HEAD:packages/orbit-components/src/Seat/index.tsx
 import { Props, Type, Size } from "./types";
-=======
-import { Props, Type, Size } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Seat/index.jsx
 
 const getSize = ({ size }: { size: Size }) => {
   const height = {

@@ -4,13 +4,8 @@
 import * as React from "react";
 import { Placement } from "@popperjs/core/lib/enums";
 
-<<<<<<< HEAD:packages/orbit-components/src/Tooltip/types.ts
 import { Popper } from "../primitives/TooltipPrimitive/types";
 import * as Common from "../common/types";
-=======
-import { Placement } from "@popperjs/core/lib/enums";
-import * as Common from "../common/common";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Tooltip/index.d.ts
 
 type Size = "small" | "medium";
 export interface Props extends Common.Globals, Popper {

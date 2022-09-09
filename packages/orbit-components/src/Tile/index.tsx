@@ -5,11 +5,7 @@ import TileContent from "./components/TileContent";
 import TileExpandable from "./components/TileExpandable";
 import TileWrapper from "./components/TileWrapper";
 import handleKeyDown from "../utils/handleKeyDown";
-<<<<<<< HEAD:packages/orbit-components/src/Tile/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Tile/index.jsx
 
 const Tile = ({
   href,

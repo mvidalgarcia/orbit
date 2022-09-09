@@ -1,9 +1,5 @@
 import { ALIGNS, JUSTIFY, DIRECTIONS } from "./consts";
-<<<<<<< HEAD
 import { Justify, Property, Align, Direction } from "./types";
-=======
-import { Justify, Property, Align, Direction } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 export const isDefined = (prop: Property): boolean => typeof prop !== "undefined";
 

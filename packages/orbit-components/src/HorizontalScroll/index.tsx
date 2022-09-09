@@ -6,11 +6,7 @@ import mergeRefs from "../utils/mergeRefs";
 import defaultTheme from "../defaultTheme";
 import useTheme from "../hooks/useTheme";
 import useScrollBox from "./useScroll";
-<<<<<<< HEAD:packages/orbit-components/src/HorizontalScroll/index.tsx
 import { Props, ScrollSnap } from "./types";
-=======
-import { Props, ScrollSnap } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/HorizontalScroll/index.jsx
 
 const TRIGGER_OFFSET = 20;
 
@@ -31,7 +27,6 @@ const StyledWrapper = styled.div<{
   isEnd?: boolean;
   isOverflowing?: boolean;
 }>`
-<<<<<<< HEAD:packages/orbit-components/src/HorizontalScroll/index.tsx
   ${({
     isDragging,
     $minHeight,
@@ -41,9 +36,6 @@ const StyledWrapper = styled.div<{
     isOverflowing,
     isEnd,
   }) => css`
-=======
-  ${({ isDragging, $minHeight, elevationColor, overflowElevation, isStart, isOverflowing }) => css`
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/HorizontalScroll/index.jsx
     position: relative;
     width: 100%;
     min-height: ${$minHeight && `${$minHeight}px`};

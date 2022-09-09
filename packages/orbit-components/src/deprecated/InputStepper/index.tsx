@@ -7,11 +7,7 @@ import validateIncrement from "../../utils/validateIncrement";
 import validateDecrement from "../../utils/validateDecrement";
 import useStateWithCallback from "../../hooks/useStateWithCallback";
 import useTranslate from "../../hooks/useTranslate";
-<<<<<<< HEAD
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 const InputStepper = React.forwardRef<HTMLInputElement, Props>(
   ({ onChange, defaultValue = 0, disabled = false, ...props }, ref) => {

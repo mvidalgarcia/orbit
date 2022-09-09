@@ -7,11 +7,7 @@ import { ELEMENT_OPTIONS, TYPE_OPTIONS, TOKENS, ALIGN } from "./consts";
 import getSpacingToken from "../common/getSpacingToken";
 import mediaQueries from "../utils/mediaQuery";
 import { DEVICES } from "../utils/mediaQuery/consts";
-<<<<<<< HEAD:packages/orbit-components/src/Heading/index.tsx
 import { Props, Type } from "./types";
-=======
-import { Props, Type } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Heading/index.jsx
 
 export const getHeadingToken = (name: string, type: Type) => ({ theme }: { theme: Theme }) => {
   const tokens = {

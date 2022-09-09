@@ -4,11 +4,7 @@ import { UIDReset, UIDFork } from "react-uid";
 
 import Dictionary from "../Dictionary";
 import QueryContextProvider from "./QueryContext/Provider";
-<<<<<<< HEAD:packages/orbit-components/src/ThemeProvider/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/ThemeProvider/index.jsx
 
 const ThemeProvider = ({ theme, dictionary, children }: Props) => {
   return (

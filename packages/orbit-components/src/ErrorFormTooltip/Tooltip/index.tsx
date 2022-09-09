@@ -2,11 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { usePopper } from "react-popper";
 
-<<<<<<< HEAD:packages/orbit-components/src/ErrorFormTooltip/Tooltip/index.tsx
 import * as Common from "../../common/types";
-=======
-import * as Common from "../../common/common";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/ErrorFormTooltip/Tooltip/index.jsx
 import useClickOutside from "../../hooks/useClickOutside";
 import KEY_CODE_MAP from "../../common/keyMaps";
 import handleKeyDown from "../../utils/handleKeyDown";
@@ -20,11 +16,7 @@ import resolveColor from "./helpers/resolveColor";
 import resolvePlacement from "./helpers/resolvePlacement";
 import { SIDE_NUDGE } from "./consts";
 import useTheme from "../../hooks/useTheme";
-<<<<<<< HEAD:packages/orbit-components/src/ErrorFormTooltip/Tooltip/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/ErrorFormTooltip/Tooltip/index.jsx
 
 const StyledArrow = styled.div<{
   inlineLabel?: boolean;

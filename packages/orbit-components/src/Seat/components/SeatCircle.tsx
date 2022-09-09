@@ -4,11 +4,7 @@ import styled from "styled-components";
 import { useRandomIdSeed } from "../../hooks/useRandomId";
 import useTheme from "../../hooks/useTheme";
 import { SIZE_OPTIONS } from "../consts";
-<<<<<<< HEAD:packages/orbit-components/src/Seat/components/SeatCircle.tsx
 import { Type, Size } from "../types";
-=======
-import { Type, Size } from "../index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Seat/components/SeatCircle.jsx
 import { resolveCloseIconColor } from "./helpers";
 
 interface Props {

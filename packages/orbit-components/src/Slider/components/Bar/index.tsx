@@ -1,11 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-<<<<<<< HEAD:packages/orbit-components/src/Slider/components/Bar/index.tsx
 import { Value } from "../../types";
-=======
-import { Value } from "../../index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Slider/components/Bar/index.jsx
 import { left as leftRight } from "../../../utils/rtl";
 import defaultTheme from "../../../defaultTheme";
 

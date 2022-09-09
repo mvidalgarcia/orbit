@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import { UseToggle } from "./index.d";
+type UseToggle = (initial?: boolean) => [boolean, () => void];
 
-const useToggle: typeof UseToggle = (initial = false) => {
+const useToggle: UseToggle = (initial = false) => {
   const [open, setOpen] = React.useState(initial);
 
   const toggle = React.useCallback(() => setOpen(state => !state), []);

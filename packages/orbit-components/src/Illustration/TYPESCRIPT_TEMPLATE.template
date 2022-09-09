@@ -6,7 +6,7 @@ import * as React from "react";
 
 import * as Common from "../common/types";
 
-type Name =%NAMES%
+export type Name =%NAMES%
 
 export interface Props extends Common.Globals, Common.SpaceAfter {
   readonly size?: "extraSmall" | "small" | "medium" | "large" | "display";

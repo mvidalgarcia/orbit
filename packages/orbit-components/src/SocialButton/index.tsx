@@ -9,11 +9,7 @@ import getSocialButtonStyles from "./helpers/getSocialButtonStyles";
 import getSocialButtonIconForeground from "./helpers/getSocialButtonIconForeground";
 import getSocialButtonIcon from "./helpers/getSocialButtonIcon";
 import { TYPE_OPTIONS } from "./consts";
-<<<<<<< HEAD
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
 
 const SocialButton = React.forwardRef<HTMLButtonElement, Props>(
   ({ type = TYPE_OPTIONS.APPLE, disabled = false, size, ...props }, ref) => {

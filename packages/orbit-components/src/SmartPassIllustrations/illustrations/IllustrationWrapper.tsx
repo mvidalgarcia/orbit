@@ -2,11 +2,7 @@ import * as React from "react";
 
 import theme from "../../defaultTheme";
 import { SIZE_OPTIONS } from "../../primitives/IllustrationPrimitive/consts";
-<<<<<<< HEAD:packages/orbit-components/src/SmartPassIllustrations/illustrations/IllustrationWrapper.tsx
 import { Props } from "../types";
-=======
-import { Props } from "../index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/SmartPassIllustrations/illustrations/IllustrationWrapper.jsx
 
 const tokens = {
   [SIZE_OPTIONS.EXTRASMALL]: theme.orbit.heightIllustrationSmall,

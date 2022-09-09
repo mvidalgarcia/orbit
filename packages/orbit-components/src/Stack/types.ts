@@ -4,11 +4,7 @@
 import * as React from "react";
 
 import { Theme } from "../defaultTheme";
-<<<<<<< HEAD:packages/orbit-components/src/Stack/types.ts
 import * as Common from "../common/types";
-=======
-import * as Common from "../common/common";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Stack/index.d.ts
 
 export type Direction = "row" | "column" | "row-reverse" | "column-reverse";
 export type Align = "start" | "end" | "center" | "stretch" | "baseline";

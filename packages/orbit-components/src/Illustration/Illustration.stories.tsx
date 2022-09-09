@@ -1,11 +1,12 @@
 import * as React from "react";
 import { select, text } from "@storybook/addon-knobs";
 
-import { NAMES } from "./consts";
+// @ts-expect-error currently not resolving mts properly
+import { NAMES } from "./consts.mts";
 import { SIZE_OPTIONS } from "../primitives/IllustrationPrimitive/consts";
 import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import IllustrationPrimitiveList from "../primitives/IllustrationPrimitive/IllustrationPrimitiveList";
-import { Name } from "./index.d";
+import { Name } from "./types";
 
 import Illustration from ".";
 

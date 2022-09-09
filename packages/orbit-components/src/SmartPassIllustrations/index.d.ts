@@ -2,7 +2,7 @@
 // Project: http://github.com/kiwicom/orbit
 import * as React from "react";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 
 type Sizes = "extraSmall" | "small" | "medium" | "large" | "display";
 

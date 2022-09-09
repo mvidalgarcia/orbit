@@ -2,11 +2,7 @@ import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
 import { TOKENS, TYPE_OPTIONS } from "../consts";
 import { Theme } from "../../defaultTheme";
-<<<<<<< HEAD:packages/orbit-components/src/SocialButton/helpers/getSocialButtonTypeToken.ts
 import { Type } from "../types";
-=======
-import { Type } from "../index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/SocialButton/helpers/getSocialButtonTypeToken.js
 
 const getSocialButtonTypeToken = (name: string, type: Type, theme: Theme): string => {
   const tokens = {

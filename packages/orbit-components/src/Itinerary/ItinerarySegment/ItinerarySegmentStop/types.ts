@@ -1,10 +1,6 @@
 import * as React from "react";
 
-<<<<<<< HEAD:packages/orbit-components/src/Itinerary/ItinerarySegment/ItinerarySegmentStop/types.ts
 import { Status } from "../../types";
-=======
-import { Status } from "../../index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Itinerary/ItinerarySegment/ItinerarySegmentStop/index.d.ts
 
 /** DOCS:
   ItinerarySegmentStop is an atomic unit of the Itinerary component, shows two locations, date and time,

@@ -5,11 +5,7 @@ import defaultTheme from "../defaultTheme";
 import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
 import media from "../utils/mediaQuery";
 import { normalize } from "./helpers";
-<<<<<<< HEAD:packages/orbit-components/src/Inline/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Inline/index.jsx
 
 const StyledInlineInner = styled.div<{
   viewportSizes: Pick<

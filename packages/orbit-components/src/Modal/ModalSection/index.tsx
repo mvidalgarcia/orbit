@@ -6,11 +6,7 @@ import media from "../../utils/mediaQuery";
 import { StyledModalFooter } from "../ModalFooter";
 import { ModalContext } from "../ModalContext";
 import useModalContextFunctions from "../helpers/useModalContextFunctions";
-<<<<<<< HEAD:packages/orbit-components/src/Modal/ModalSection/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Modal/ModalSection/index.jsx
 
 export const StyledModalSection = styled.section<{
   suppressed?: boolean;

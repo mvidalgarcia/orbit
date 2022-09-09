@@ -4,11 +4,7 @@ import styled, { keyframes, css } from "styled-components";
 import defaultTheme from "../defaultTheme";
 import TYPE_OPTIONS from "./consts";
 import { left, right } from "../utils/rtl";
-<<<<<<< HEAD:packages/orbit-components/src/Loading/index.tsx
 import { Props, Type } from "./types";
-=======
-import { Props, Type } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Loading/index.jsx
 
 const getHeight = ({
   type,

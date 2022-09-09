@@ -2,7 +2,8 @@ import * as React from "react";
 import { screen, render } from "@testing-library/react";
 
 import theme from "../../defaultTheme";
-import Inline, { SpacingToken } from "../index.d";
+import { SpacingToken } from "../types";
+import Inline from "..";
 
 const tokens = {
   none: "",

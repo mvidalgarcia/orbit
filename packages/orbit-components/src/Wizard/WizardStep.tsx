@@ -11,11 +11,7 @@ import WizardStepIcon, { StyledStepIconContainer } from "./WizardStepIcon";
 import { WizardStepContext, Status } from "./WizardContext";
 import defaultTheme from "../defaultTheme";
 import { left, right } from "../utils/rtl";
-<<<<<<< HEAD:packages/orbit-components/src/Wizard/WizardStep.tsx
 import { WizardStepProps } from "./types";
-=======
-import { Props } from "./WizardStep.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Wizard/WizardStep.jsx
 import { resolveStepBorder } from "./helpers";
 
 const StyledBorder = styled.div`
@@ -149,11 +145,7 @@ StyledButtonWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
-<<<<<<< HEAD:packages/orbit-components/src/Wizard/WizardStep.tsx
 const WizardStep = ({ dataTest, title, onClick }: WizardStepProps) => {
-=======
-const WizardStep = ({ dataTest, title, onClick }: Props) => {
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Wizard/WizardStep.jsx
   const theme = useTheme();
   const {
     index,

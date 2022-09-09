@@ -11,11 +11,7 @@ import CompactPages from "./components/CompactPages";
 import ActiveButton from "./components/ActiveButton";
 import Translate from "../Translate";
 import useTranslate from "../hooks/useTranslate";
-<<<<<<< HEAD:packages/orbit-components/src/Pagination/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Pagination/index.jsx
 
 const handlePageChange = (onPageChange, pageCount) => nextPageIndex => {
   if (onPageChange && nextPageIndex <= pageCount && nextPageIndex >= 0) {

@@ -54,11 +54,7 @@ export const StyledButtonPrimitive = styled(
       const Component = isButtonWithHref ? "a" : asComponent;
       const buttonType = submit ? "submit" : "button";
 
-<<<<<<< HEAD
       const handleKeyDown = (ev: React.KeyboardEvent<HTMLAnchorElement | HTMLButtonElement>) =>
-=======
-      const handleKeyDown = (ev: React.KeyboardEvent<HTMLDivElement>) =>
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554))
         asComponent === "div" ? onKeyDown(onClick)(ev) : undefined;
 
       return (

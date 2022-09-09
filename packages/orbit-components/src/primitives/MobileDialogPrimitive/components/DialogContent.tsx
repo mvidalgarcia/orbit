@@ -1,11 +1,7 @@
 import * as React from "react";
 import styled, { css } from "styled-components";
 
-<<<<<<< HEAD:packages/orbit-components/src/primitives/MobileDialogPrimitive/components/DialogContent.tsx
 import * as Common from "../../../common/types";
-=======
-import * as Common from "../../../common/common";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/primitives/MobileDialogPrimitive/components/DialogContent.jsx
 import { StyledText } from "../../../Text";
 import { Item } from "../../../List/ListItem";
 import defaultTheme from "../../../defaultTheme";

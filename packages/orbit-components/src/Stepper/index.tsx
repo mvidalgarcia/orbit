@@ -4,11 +4,7 @@ import StepperStateless from "./StepperStateless";
 import validateIncrement from "../utils/validateIncrement";
 import validateDecrement from "../utils/validateDecrement";
 import useStateWithCallback from "../hooks/useStateWithCallback";
-<<<<<<< HEAD:packages/orbit-components/src/Stepper/index.tsx
 import { Props } from "./types";
-=======
-import { Props } from "./index.d";
->>>>>>> 5169f718a (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Stepper/index.jsx
 
 const Stepper = ({ onChange, defaultValue = 0, maxWidth = 108, ...props }: Props) => {
   const [value, setValue] = useStateWithCallback<number>(defaultValue, onChange);
