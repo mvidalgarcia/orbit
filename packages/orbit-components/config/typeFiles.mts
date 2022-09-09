@@ -22,7 +22,7 @@ const generateTypeFile = async (templatePath: string, replacements: Record<strin
     TEMPLATE,
   );
 
-  fs.writeFileSync(path.join(path.dirname(templatePath), "index.d.ts"), replacedTemplate);
+  fs.writeFileSync(path.join(path.dirname(templatePath), "types.ts"), replacedTemplate);
 };
 
 const templateFiles = [
