@@ -11,7 +11,7 @@ import SPACINGS_AFTER from "../common/getSpacingToken/consts";
 import Button from ".";
 
 const getIcons = (name: string, defaultIcon: string) =>
-  select(name, [null, ...Object.keys(Icons)], defaultIcon);
+  select(name, Object.keys(Icons), defaultIcon);
 
 const getIcon = (source: string | null) => (source ? Icons[source] : null);
 
@@ -147,9 +147,10 @@ CircledButton.story = {
 export const DestructiveButtons = () => {
   const children = text("Children", "Destructive button");
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
 
   return (
-    <Button onClick={action("clicked")} type="critical" size={size} iconLeft={<Icons.Remove />}>
+    <Button onClick={action("clicked")} type="critical" size={size} iconLeft={<IconLeft />}>
       {children}
     </Button>
   );
@@ -170,6 +171,7 @@ export const ButtonAsALink = () => {
   const external = boolean("External", false);
   const disabled = boolean("Disabled", false);
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.NORMAL);
+  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
 
   return (
     <Button
@@ -178,7 +180,7 @@ export const ButtonAsALink = () => {
       external={external}
       size={size}
       disabled={disabled}
-      iconLeft={<Icons.Airplane />}
+      iconLeft={<IconLeft />}
     >
       {children}
     </Button>
@@ -213,7 +215,7 @@ export const Playground = () => {
   const ariaExpanded = boolean("Aria expanded", false);
   const ariaControls = text("Aria controls", "element ID");
   const tabIndex = text("tabIndex", "0");
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), "small");
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const title = text("Title", "Additional information for accessibility");
   const rel = text("Rel", "nofollow");
   const contentAlign = select(
@@ -284,13 +286,17 @@ Accessibility.story = {
   },
 };
 
-export const Rtl = () => (
-  <RenderInRtl>
-    <Button type="primary" iconLeft={<Icons.Airplane />}>
-      Button
-    </Button>
-  </RenderInRtl>
-);
+export const Rtl = () => {
+  const IconLeft = getIcon(getIcons("iconLeft", "Airplane"));
+
+  return (
+    <RenderInRtl>
+      <Button type="primary" iconLeft={<IconLeft />}>
+        Button
+      </Button>
+    </RenderInRtl>
+  );
+};
 
 Rtl.story = {
   name: "RTL",

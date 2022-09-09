@@ -42,7 +42,7 @@ import Itinerary, {
   ItineraryStatus,
 } from ".";
 
-const StyledText = styled.p<{ type: any }>`
+const StyledText = styled.span<{ type?: string; weight?: string }>`
   ${({ theme, type }) => css`
     font-weight: ${theme.orbit.fontWeightBold};
     font-size: ${theme.orbit.fontSizeTextSmall};

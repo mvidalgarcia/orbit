@@ -13,12 +13,12 @@ export default {
   title: "AirportIllustration",
 };
 
-export const Playground = (): React.ReactNode => {
+export const Playground = () => {
   const size = select("Size", Object.values(SIZE_OPTIONS), SIZE_OPTIONS.MEDIUM);
   const name = select("Name", NAMES, "BGYFastTrack");
   const dataTest = text("dataTest", "test");
   const alt = text("alt", "null");
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   return (
     <AirportIllustration
       size={size}
@@ -36,7 +36,7 @@ Playground.story = {
   },
 };
 
-export const ListOfAllAirportIllustrations = (): React.ReactNode => {
+export const ListOfAllAirportIllustrations = () => {
   return <IllustrationPrimitiveList nameOfComponent="AirportIllustration" images={NAMES} />;
 };
 

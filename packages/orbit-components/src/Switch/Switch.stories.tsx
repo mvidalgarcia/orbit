@@ -42,7 +42,7 @@ CustomIcon.story = {
 export const Playground = () => {
   const checked = boolean("checked", false);
   const dataTest = text("dataTest", "");
-  const Icon = getIcon(getIcons("icon", null));
+  const Icon = getIcon(getIcons("icon", "Lock"));
   const disabled = boolean("disabled", false);
 
   return (

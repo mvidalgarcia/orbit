@@ -1,7 +1,6 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
 
-import * as Icons from "../icons";
 import { TYPE_OPTIONS } from "./consts";
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 
@@ -53,9 +52,7 @@ export const Email = () => {
 
 export const Rtl = () => (
   <RenderInRtl>
-    <SocialButton type={TYPE_OPTIONS.APPLE} iconRight={<Icons.Airplane />}>
-      Button
-    </SocialButton>
+    <SocialButton type={TYPE_OPTIONS.APPLE}>Button</SocialButton>
   </RenderInRtl>
 );
 

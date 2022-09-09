@@ -49,7 +49,6 @@ async function generateIcon(pathToFile, size, color, extraDir) {
 
   if (file) {
     const updateBuffer = Buffer.from(
-      // @ts-expect-error TODO
       file.toString().replace(`<svg `, `<svg fill="${color}" `),
       "utf8",
     );

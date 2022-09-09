@@ -61,7 +61,7 @@ import { NAMES as AIRPORT_ILLUSTRATION_NAMES } from "../../src/AirportIllustrati
   const typescriptTemplate = (functionName: string) => `
 import * as React from "react";
 
-import { Props } from "../Icon";
+import { Props } from "../Icon/types";
 
 declare const ${functionName}: React.FunctionComponent<Props>;
 
@@ -90,7 +90,7 @@ export { ${functionName}, ${functionName} as default };
 
     // write TypeScript declaration for every icon
     fs.writeFileSync(
-      path.join(componentPath, `${outputComponentFileName.replace(/\.jsx?/, "")}.d.ts`),
+      path.join(componentPath, `${outputComponentFileName.replace(/\.tsx?/, "")}.d.ts`),
       typescriptTemplate(functionName),
     );
   });

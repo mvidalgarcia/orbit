@@ -13,7 +13,7 @@ import ThemeProvider from ".";
 
 const ButtonWithTranslation = () => {
   const translate = useTranslate();
-  return <Button>{translate("button_close", "")}</Button>;
+  return <Button>{translate("button_close")}</Button>;
 };
 
 export default {

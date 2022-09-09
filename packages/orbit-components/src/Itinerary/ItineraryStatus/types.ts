@@ -2,7 +2,7 @@ import React from "react";
 
 import * as Common from "../../common/types";
 
-export type Status = "warning" | "critical" | "info" | "success";
+export type Status = "warning" | "critical" | "info" | "success" | "neutral";
 
 export interface Props extends Common.SpaceAfter {
   /** Type of the status  */

@@ -8,6 +8,6 @@ import * as Common from "../../../common/types";
 type Type = "default" | "legroom" | "unavailable";
 
 export interface Props extends Common.Globals {
-  readonly type: Type;
+  readonly type?: Type;
   readonly label?: React.ReactNode;
 }

@@ -65,7 +65,7 @@ SmallInput.story = {
 
 export const NumberInput = () => {
   const label = text("Label", "Number");
-  const value = text("Value", 2);
+  const value = text("Value", "2");
   const placeholder = text("Placeholder", "Number");
   const maxValue = number("maxValue", 3);
   const minValue = number("minValue", 1);
@@ -222,7 +222,7 @@ export const CompactInput = () => {
   const label = text("Label", "Label");
   const placeholder = text("Placeholder", "Placeholder");
   const required = boolean("required", false);
-  const error = text("Error", undefined);
+  const error = text("Error", "");
 
   return (
     <InputField
@@ -250,7 +250,7 @@ export const CompactInputWithTags = () => {
   const label = text("Label", "Label");
   const placeholder = text("Placeholder", "Placeholder");
   const required = boolean("required", false);
-  const error = text("Error", undefined);
+  const error = text("Error", "");
 
   return (
     <InputField
@@ -446,25 +446,21 @@ export const Playground = () => {
   const placeholder = text("Placeholder", "Placeholder");
   const Prefix = getIcon(getIcons("Prefix", "Search"));
   const Suffix = getIcon(getIcons("Suffix", "Visibility"));
-  const help = text("Help", undefined);
-  const error = text("Error", undefined);
+  const help = text("Help", "");
+  const error = text("Error", "");
   const disabled = boolean("Disabled", false);
-  const maxValue = number("maxValue", undefined);
-  const minValue = number("minValue", undefined);
+  const maxValue = number("maxValue", Infinity);
+  const minValue = number("minValue", -Infinity);
   const required = boolean("required", false);
-  const maxLength = number("maxLength", undefined);
-  const minLength = number("minLength", undefined);
+  const maxLength = number("maxLength", Infinity);
+  const minLength = number("minLength", -Infinity);
   const readOnly = boolean("readOnly", false);
   const autoComplete = text("autoComplete", "off");
   const autoFocus = boolean("autoFocus", true);
   const dataTest = text("dataTest", "test");
-  const spaceAfter = select(
-    "spaceAfter",
-    [null, ...Object.values(SPACINGS_AFTER)],
-    SPACINGS_AFTER.NORMAL,
-  );
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NORMAL);
   const id = text("id", "ID");
-  const inputMode = select("inputMode", [null, ...Object.values(INPUTMODE)], INPUTMODE.TEXT);
+  const inputMode = select("inputMode", Object.values(INPUTMODE), INPUTMODE.TEXT);
   const dataAttrs = object("dataAttrs", { "data-recording-ignore": true });
 
   return (

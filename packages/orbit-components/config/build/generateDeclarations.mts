@@ -26,11 +26,9 @@ export default async function generateTypeDeclarations() {
         });
         const content = dedent`
               // @flow
-              ${flowgen.beautify(
-                flowDecl
-                  .replace("import React from", "import * as React from")
-                  .replace("React.FC", "React.StatelessFunctionalComponent"),
-              )}
+              ${flowDecl
+                .replace("import React from", "import * as React from")
+                .replace("React.FC", "React.StatelessFunctionalComponent")}
             `;
         await fs.writeFile(flowDeclPath, content);
       } catch (err) {

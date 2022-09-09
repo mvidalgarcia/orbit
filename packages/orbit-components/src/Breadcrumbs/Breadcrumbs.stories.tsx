@@ -32,7 +32,7 @@ Default.story = {
 };
 
 export const Playground = () => {
-  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), "small");
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const href = text("href", "https://kiwi.com");
   const withGoBack = boolean("onGoBack", true);
   const backHref = text("backHref", "");

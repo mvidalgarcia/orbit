@@ -20,6 +20,10 @@ StyledIndent.defaultProps = {
   theme: defaultTheme,
 };
 
+const StyledLabelWrapper = styled.div`
+  padding-top: 2px;
+`;
+
 interface Props extends StepProps {
   last: boolean;
   typeIcon: React.ReactNode;
@@ -29,16 +33,11 @@ interface Props extends StepProps {
 const Label = ({ asText, type, label }) => {
   if (asText) {
     return (
-      <div
-        // @ts-expect-error TODO
-        css={css`
-          padding-top: 2px;
-        `}
-      >
+      <StyledLabelWrapper>
         <Text type={type} weight="medium">
           {label}
         </Text>
-      </div>
+      </StyledLabelWrapper>
     );
   }
 

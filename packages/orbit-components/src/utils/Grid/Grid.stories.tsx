@@ -18,10 +18,10 @@ export const Playground = () => {
   const inline = boolean("inline", false);
   const maxWidth = text("maxWidth", "1440px");
   const width = text("width", "100%");
-  const columns = text("columns", undefined);
+  const columns = text("columns", "");
   const rows = text("rows", "repeat(8, 40px)");
-  const gap = text("gap", null);
-  const columnGap = text("columnGap", null);
+  const gap = text("gap", "");
+  const columnGap = text("columnGap", "");
   const rowGap = text("rowGap", "10px");
   const as = text("as", "div");
   const dataTest = text("dataTest", "test");

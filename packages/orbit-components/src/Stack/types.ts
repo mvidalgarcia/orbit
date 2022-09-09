@@ -19,7 +19,8 @@ export type Spacing =
   | "medium"
   | "large"
   | "XLarge"
-  | "XXLarge";
+  | "XXLarge"
+  | "XXXLarge";
 
 interface MediaQuery extends Common.SpaceAfter {
   readonly inline?: boolean;

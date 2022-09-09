@@ -7,7 +7,7 @@ import Pagination from "..";
 
 jest.mock("../../hooks/useMediaQuery", () => jest.fn());
 
-const useMediaQueryMock = useMediaQuery;
+const useMediaQueryMock: any = useMediaQuery;
 
 const breakpoints = {
   normal: { isTablet: true },

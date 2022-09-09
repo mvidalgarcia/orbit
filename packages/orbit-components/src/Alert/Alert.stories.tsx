@@ -16,8 +16,7 @@ import CountryFlag from "../CountryFlag";
 
 import Alert, { AlertButton } from ".";
 
-const getIcons = (defaultIcon: string) =>
-  select("Icon", [null, ...Object.keys(Icons)], defaultIcon);
+const getIcons = (defaultIcon: string) => select("Icon", ["", ...Object.keys(Icons)], defaultIcon);
 
 const getIcon = (source: string): React.ReactNode => Icons[source];
 
@@ -148,7 +147,7 @@ export const InlineActions = () => {
   return (
     <Alert
       type={type}
-      icon={Icon && <Icon />}
+      icon={Icon}
       title={title}
       closable={closable}
       onClose={action("Close")}
@@ -176,13 +175,13 @@ export const Playground = () => {
   const button = text("Button", "I am a link");
   const closable = boolean("Closable", false);
   const Icon = getIcon(getIcons("Airplane"));
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const suppressed = boolean("suppressed", false);
 
   return (
     <Alert
       type={type}
-      icon={Icon && <Icon />}
+      icon={Icon}
       title={title}
       suppressed={suppressed}
       closable={closable}
@@ -204,7 +203,6 @@ export const Playground = () => {
           <AlertButton type={type} href="#">
             {button}
           </AlertButton>
-          {/* $FlowExpectedError */}
           <AlertButton type={suppressed ? "secondary" : `${type}Subtle`} href="#">
             {button}
           </AlertButton>

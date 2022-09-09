@@ -6,7 +6,8 @@ import Button from "../Button";
 import { SIZES } from "./consts";
 import Illustration from "../Illustration";
 import Text from "../Text";
-import { NAMES } from "../Illustration/consts";
+// @ts-expect-error currently not resolving mts properly
+import { NAMES } from "../Illustration/consts.mts";
 import ChevronLeft from "../icons/ChevronLeft";
 import FlightDirect from "../icons/FlightDirect";
 import Stack from "../Stack";
@@ -464,7 +465,7 @@ export const FullPreview = () => {
   const size = select("Size", Object.values(SIZES), SIZES.NORMAL);
   const title = text("Title", "Orbit design system");
   const description = text("Description", "Lorem ispum dolor sit amet");
-  const illustration = select("Illustration", [null, ...Object.values(NAMES)], "Accommodation");
+  const illustration = select("Illustration", Object.values(NAMES), NAMES[0]);
   const fixed = boolean("fixedFooter", false);
   const suppressed = boolean("suppressed", false);
   const content = text(
@@ -491,7 +492,6 @@ export const FullPreview = () => {
       >
         <ModalHeader
           title={title}
-          // @ts-expect-error TODO
           illustration={illustration && <Illustration name={illustration} size="small" />}
           description={description}
           suppressed={suppressed}

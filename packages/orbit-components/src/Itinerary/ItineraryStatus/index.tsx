@@ -109,7 +109,6 @@ const ItineraryStatus = ({ type, label, spaceAfter = "medium", children, offset 
           <Stack flex spacing="XSmall" align="center">
             <StatusIcon type={type} />
             {label && (
-              // @ts-expect-error expected
               <Text as="div" type={type === "neutral" ? "primary" : type} weight="medium">
                 {label}
               </Text>

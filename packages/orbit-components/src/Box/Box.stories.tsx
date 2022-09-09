@@ -1,64 +1,86 @@
 import * as React from "react";
-import { text, select, object, number } from "@storybook/addon-knobs";
+import { text, select, number } from "@storybook/addon-knobs";
 
 import RenderInRtl from "../utils/rtl/RenderInRtl";
 import { WIDTH_AND_HEIGHT } from "./consts";
+import { SpacingToken, ColorTokens } from "./types";
 
 import Box from ".";
 
 const DEFAULT_COLOR = "blueDark";
 
-const DISPLAY = {
-  NONE: "none",
-  FLEX: "flex",
-  "INLINE-FLEX": "inline-flex",
-  BLOCK: "block",
-  INLINE: "inline",
-  "INLINE-BLOCK": "inline-block",
-};
+enum DISPLAY {
+  NONE = "none",
+  FLEX = "flex",
+  "INLINE-FLEX" = "inline-flex",
+  BLOCK = "block",
+  INLINE = "inline",
+  "INLINE-BLOCK" = "inline-block",
+}
 
-const WRAP = [0, 1];
+enum WRAP {
+  WRAP = "wrap",
+  NOWRAP = "nowrap",
+}
 
-const DIRECTION = {
-  ROW: "row",
-  COLUMN: "column",
-  "ROW-REVERSE": "row-reverse",
-  "COLUMN-REVERSE": "column-reverse",
-};
+enum DIRECTION {
+  ROW = "row",
+  COLUMN = "column",
+  "ROW-REVERSE" = "row-reverse",
+  "COLUMN-REVERSE" = "column-reverse",
+}
 
-const POSITION = { ABSOLUTE: "absolute", RELATIVE: "relative", FIXED: "fixed" };
+enum POSITION {
+  ABSOLUTE = "absolute",
+  RELATIVE = "relative",
+  FIXED = "fixed",
+}
 
-const ALIGN = { START: "start", END: "end", CENTER: "center", STRETCH: "stretch" };
+enum ALIGN {
+  START = "start",
+  END = "end",
+  CENTER = "center",
+  STRETCH = "stretch",
+}
 
-const JUSTIFY = {
-  CENTER: "center",
-  START: "start",
-  END: "end",
-  BETWEEN: "between",
-  AROUND: "around",
-};
+enum JUSTIFY {
+  CENTER = "center",
+  START = "start",
+  END = "end",
+  BETWEEN = "between",
+  AROUND = "around",
+}
 
-const TEXT_ALIGN = { LEFT: "left", RIGHT: "right", CENTER: "center" };
+enum TEXT_ALIGN {
+  LEFT = "left",
+  RIGHT = "right",
+  CENTER = "center",
+}
 
-const ELEVATION = {
-  ACTION: "action",
-  FIXED: "fixed",
-  RAISED: "raised",
-  OVERLAY: "overlay",
-  FIXEDREVERSE: "fixedReverse",
-  RAISEDREVERSE: "raisedReverse",
-};
+enum ELEVATION {
+  ACTION = "action",
+  FIXED = "fixed",
+  RAISED = "raised",
+  OVERLAY = "overlay",
+  FIXEDREVERSE = "fixedReverse",
+  RAISEDREVERSE = "raisedReverse",
+}
 
-const BORDER_RADIUS = {
-  SMALL: "small",
-  NORMAL: "normal",
-  LARGE: "large",
-  RADIUSCIRCLE: "circle",
-};
+enum BORDER_RADIUS {
+  SMALL = "small",
+  NORMAL = "normal",
+  LARGE = "large",
+  RADIUSCIRCLE = "circle",
+}
 
-const OVERFLOW = { AUTO: "auto", HIDDEN: "hidden", SCROLL: "scroll", VISIBLE: "visible" };
+enum OVERFLOW {
+  AUTO = "auto",
+  HIDDEN = "hidden",
+  SCROLL = "scroll",
+  VISIBLE = "visible",
+}
 
-const COLORS = [
+const COLORS: ColorTokens[] = [
   "productLight",
   "productLightHover",
   "productLightActive",
@@ -133,18 +155,18 @@ const COLORS = [
   "socialFacebookActive",
 ];
 
-const SPACINGS = [
-  "none",
-  "XXXSmall",
-  "XXSmall",
-  "XSmall",
-  "small",
-  "medium",
-  "large",
-  "XLarge",
-  "XXLarge",
-  "XXXLarge",
-];
+enum SPACINGS {
+  NONE = "none",
+  XXXSmall = "XXXSmall",
+  XXSmall = "XXSmall",
+  XSmall = "XSmall",
+  SMALL = "small",
+  MEDIUM = "medium",
+  LARGE = "large",
+  XLARGE = "XLarge",
+  XXLarge = "XXLarge",
+  XXXLarge = "XXXLarge",
+}
 
 export default {
   title: "Box",
@@ -229,8 +251,8 @@ export const Positions = () => {
 };
 
 export const PaddingMargin = () => {
-  const margin = select("margin", SPACINGS, SPACINGS[0]);
-  const padding = select("padding", SPACINGS, SPACINGS[0]);
+  const margin = select("margin", Object.values(SPACINGS), SPACINGS.SMALL);
+  const padding = select("margin", Object.values(SPACINGS), SPACINGS.SMALL);
 
   return (
     <Box background={DEFAULT_COLOR} maxWidth="300px" margin={margin} padding={padding}>
@@ -315,10 +337,10 @@ export const Elevation = () => {
 
 export const Flex = () => {
   const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
-  const display = select("display", Object.values(DISPLAY), "flex");
+  const display = select("display", Object.values(DISPLAY), DISPLAY.FLEX);
   const align = select("align", Object.values(ALIGN), ALIGN.START);
-  const justify = select("justify", Object.values(JUSTIFY), "start");
-  const wrap = select("wrap", Object.values(WRAP), WRAP[0]);
+  const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const wrap = select("wrap", Object.values(WRAP), WRAP.NOWRAP);
   const shrink = number("shrink", 0);
   const grow = number("grow", 0);
 
@@ -343,7 +365,7 @@ export const Playground = () => {
   const children = text("Children", "Box");
   const display = select("display", Object.values(DISPLAY), DISPLAY.FLEX);
   const overflow = select("overflow", Object.values(OVERFLOW), OVERFLOW.VISIBLE);
-  const wrap = select("wrap", Object.values(WRAP), WRAP[0]);
+  const wrap = select("wrap", Object.values(WRAP), WRAP.NOWRAP);
   const shrink = number("shrink", 0);
   const grow = number("grow", 0);
   const align = select("align", Object.values(ALIGN), ALIGN.START);
@@ -362,8 +384,8 @@ export const Playground = () => {
   const right = text("right", "10px");
   const bottom = text("left", "10px");
   const left = text("bottom", "10px");
-  const margin = select("margin", SPACINGS, SPACINGS[0]);
-  const padding = object("padding", { top: "small", left: "XSmall", right: "XXSmall" }, "");
+  const margin = select("margin", Object.values(SPACINGS), SPACINGS.NONE);
+  const padding = text("padding", "0");
 
   return (
     <Box
@@ -388,7 +410,7 @@ export const Playground = () => {
       bottom={bottom}
       left={left}
       overflow={overflow}
-      padding={padding}
+      padding={padding as SpacingToken}
       margin={margin}
       color="productLight"
       background="inkLight"
@@ -408,8 +430,8 @@ Playground.story = {
 export const Rtl = () => {
   const right = text("right", "10px");
   const left = text("bottom", "10px");
-  const margin = select("margin", SPACINGS, SPACINGS[0]);
-  const padding = object("padding", { top: "small", left: "XSmall", right: "XXSmall" }, "");
+  const margin = select("margin", Object.values(SPACINGS), SPACINGS.SMALL);
+  const padding = text("padding", "");
   const textAlign = select("text-align", Object.values(TEXT_ALIGN), TEXT_ALIGN.LEFT);
   const justify = select("justify", Object.values(JUSTIFY), JUSTIFY.CENTER);
   const direction = select("direction", Object.values(DIRECTION), DIRECTION.ROW);
@@ -425,7 +447,7 @@ export const Rtl = () => {
         left={left}
         align={align}
         margin={margin}
-        padding={padding}
+        padding={padding as SpacingToken}
       >
         Box in RTL
       </Box>

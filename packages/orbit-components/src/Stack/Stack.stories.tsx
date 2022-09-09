@@ -60,15 +60,15 @@ Default.story = {
 
 export const MobileProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", [null, ...Object.values(ALIGNS)], null);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], null);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.START);
+  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.SMALL);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
 
   return (
     <Stack
@@ -102,15 +102,15 @@ MobileProperties.story = {
 
 export const MediumMobileProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
+  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.LARGE);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const mediumMobile = {
     inline,
     direction,
@@ -143,15 +143,15 @@ MediumMobileProperties.story = {
 
 export const LargeMobileProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
+  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.LARGE);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const largeMobile = {
     inline,
     direction,
@@ -184,15 +184,14 @@ LargeMobileProperties.story = {
 
 export const TabletProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
+  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.LARGE);
   const tablet = {
     inline,
     direction,
@@ -203,7 +202,6 @@ export const TabletProperties = () => {
     align,
     justify,
     spacing,
-    spaceAfter,
   };
 
   return (
@@ -225,15 +223,15 @@ TabletProperties.story = {
 
 export const DesktopProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
+  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.LARGE);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.SMALL);
   const desktop = {
     inline,
     direction,
@@ -266,15 +264,15 @@ DesktopProperties.story = {
 
 export const LargeDesktopProperties = () => {
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], null);
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "auto");
-  const align = select("Align", [null, ...Object.values(ALIGNS)], ALIGNS.END);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.LARGE);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.END);
+  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.LARGE);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), undefined);
   const largeDesktop = {
     inline,
     direction,
@@ -334,20 +332,20 @@ export const Playground = () => {
   const dataTest = text("dataTest", "test");
   const flex = boolean("flex", true);
   const inline = boolean("Inline", false);
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], DIRECTIONS.ROW);
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
   const wrap = boolean("Wrap", false);
   const grow = boolean("Grow", true);
   const shrink = boolean("Shrink", false);
   const basis = text("Basis", "");
-  const align = select("Align", [null, ...Object.values(ALIGNS)], null);
-  const justify = select("Justify", [null, ...Object.values(JUSTIFY)], null);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.XXXSMALL);
-  const spaceAfter = select("spaceAfter", [null, ...Object.values(SPACINGS_AFTER)], null);
+  const align = select("Align", Object.values(ALIGNS), ALIGNS.START);
+  const justify = select("Justify", Object.values(JUSTIFY), JUSTIFY.START);
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.XXXSMALL);
+  const spaceAfter = select("spaceAfter", Object.values(SPACINGS_AFTER), SPACINGS_AFTER.NORMAL);
   const mediumMobile = object("mediumMobile", {
     direction: DIRECTIONS.COLUMN,
   });
   const largeMobile = object("largeMobile", {
-    align: JUSTIFY.END,
+    align: ALIGNS.END,
   });
   const tablet = object("tablet", {
     spacing: SPACINGS.XSMALL,
