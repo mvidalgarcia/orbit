@@ -1,12 +1,10 @@
-import { $, argv, globby, path } from "zx";
+import { $, argv } from "zx";
 
 (async () => {
   // Check types
   if (argv.types) {
-    // eslint-disable-next-line no-restricted-syntax
-    for (const configPath of await globby("**/tsconfig.json", { gitignore: true })) {
-      await $`tsc --project ${path.dirname(configPath)} --noEmit --emitDeclarationOnly false`;
-    }
+    await $`lerna run check:types`;
+    await $`yarn docs check:types`;
   }
   // Check links
   if (argv.links) {

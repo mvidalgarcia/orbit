@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Stack } from "@kiwicom/orbit-components";
 import { Link as LinkIcon } from "@kiwicom/orbit-components/icons";
-import { SpaceAfter } from "@kiwicom/orbit-components/lib/common/common";
+import { SpaceAfter } from "@kiwicom/orbit-components/lib/common/types";
 
 import { getTextFromChildren, slugify } from "../utils/common";
 

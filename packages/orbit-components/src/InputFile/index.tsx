@@ -155,7 +155,7 @@ const InputFile = React.forwardRef<HTMLDivElement, Props>((props, ref) => {
         onChange={onChange}
         onFocus={handleFocus}
         onBlur={onBlur}
-        accept={allowedFileTypes}
+        accept={Array.isArray(allowedFileTypes) ? allowedFileTypes.join(",") : allowedFileTypes}
         tabIndex={Number(tabIndex)}
       />
       {label && (

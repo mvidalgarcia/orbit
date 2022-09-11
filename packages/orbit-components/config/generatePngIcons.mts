@@ -1,4 +1,3 @@
-// @flow
 import sharp from "sharp";
 import { fs, path } from "zx";
 import filedirname from "filedirname";

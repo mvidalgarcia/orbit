@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "gatsby develop",
+    "check:types": "tsc",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve",

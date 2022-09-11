@@ -33,7 +33,7 @@
     "dev": "tsup src/index.ts --watch",
     "build": "tsup",
     "clean": "npx rimraf dist",
-    "types": "tsc",
+    "check:types": "tsc --noEmit",
     "eslint": "eslint 'src/**/*.ts'",
     "eslint:fix": "eslint --fix 'src/**/*.ts'"
   },

@@ -100,7 +100,6 @@ export default function Home({ location, path }: Props) {
                   type="primary"
                   circled
                   iconRight={<ArrowRight />}
-                  // @ts-expect-error asComponent has wrong type declaration
                   asComponent={GatsbyLinkToButton}
                   href="/getting-started/"
                 >
