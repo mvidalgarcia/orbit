@@ -1,4 +1,4 @@
-import { css, FlattenInterpolation, ThemedStyledProps } from "styled-components";
+import { css, FlattenInterpolation } from "styled-components";
 
 import {
   getJustify,
@@ -22,7 +22,7 @@ interface StyledProps extends Props {
 
 const getViewportFlexStyles = (viewport: Devices) => (
   props: StyledProps,
-): FlattenInterpolation<ThemedStyledProps<Theme, any>> => {
+): FlattenInterpolation<any> => {
   const { flex, theme } = props;
   const { inline, direction, wrap, grow, shrink, basis, justify, align, spaceAfter } = props[
     viewport
