@@ -216,14 +216,12 @@ export const disableBodyScroll = (
   }
 
   if (isIosDevice) {
-    // $FlowExpectedError
     targetElement.ontouchstart = (event: HandleScrollEvent) => {
       if (event.targetTouches.length === 1) {
         // detect single touch.
         initialClientY = event.targetTouches[0].clientY;
       }
     };
-    // $FlowExpectedError
     targetElement.ontouchmove = (event: HandleScrollEvent) => {
       if (event.targetTouches.length === 1) {
         // detect single touch.

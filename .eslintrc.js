@@ -1,4 +1,3 @@
-// @noflow
 const { DEV_DEPENDENCIES } = require("./utils/eslint");
 
 module.exports = {
@@ -64,16 +63,6 @@ module.exports = {
       files: DEV_DEPENDENCIES,
       rules: {
         "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
-      },
-    },
-    {
-      files: ["*.js?(x)", "*.js?(x).flow"],
-      extends: ["plugin:flowtype/recommended", "prettier"],
-      plugins: ["adeira"],
-      rules: {
-        "flowtype/require-exact-type": "error",
-        "react/default-props-match-prop-types": "off", // Conflict between Flow and ESLint
-        "adeira/no-internal-flow-type": "error",
       },
     },
     {
@@ -185,8 +174,6 @@ module.exports = {
     {
       files: "docs/**",
       rules: {
-        // we're not using Flow in docs
-        "flowtype/require-valid-file-annotation": "off",
         // these make sense for libraries, but not documentation
         "global-require": "off",
         camelcase: "off",
@@ -287,16 +274,6 @@ module.exports = {
       files: ["*.stories.*", "**/__examples__/**", "*.test.*"],
       rules: {
         "orbit-components/unique-id": "off",
-      },
-    },
-    {
-      files: [
-        "packages/orbit-components/{src,es,lib}/**/*.js?(x)",
-        "packages/orbit-design-tokens/{src,es,lib}/**/*.js?(x)",
-        "*.js?(x).flow",
-      ],
-      rules: {
-        "flowtype/require-valid-file-annotation": ["error", "always"],
       },
     },
     {

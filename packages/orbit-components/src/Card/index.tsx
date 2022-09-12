@@ -53,7 +53,6 @@ const Card = ({
 
   // Currently disable that code, becuase of IE 11, where it does not work
   // It will be fixed later, when we'll find solution
-  // eslint-disable-next-line no-unused-vars
   const renderSection = (item, index) => {
     if (React.isValidElement(item)) {
       // if (item.props.children && item.type.name !== "CardSection") {

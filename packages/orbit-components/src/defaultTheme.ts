@@ -1,7 +1,7 @@
-import { defaultTokens, Tokens } from "@kiwicom/orbit-design-tokens";
+import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
 export interface Theme {
-  readonly orbit: Tokens;
+  readonly orbit: typeof defaultTokens;
   readonly transitions?: boolean;
   readonly lockScrolling?: boolean;
   readonly lockScrollingBarGap?: boolean;
