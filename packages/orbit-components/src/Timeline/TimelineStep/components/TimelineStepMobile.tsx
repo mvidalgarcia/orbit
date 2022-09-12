@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import StyledRelative from "../primitives/StyledRelative";
 import defaultTheme from "../../../defaultTheme";

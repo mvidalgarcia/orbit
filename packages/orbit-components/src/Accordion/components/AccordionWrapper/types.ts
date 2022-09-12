@@ -12,4 +12,3 @@ export interface Props {
   readonly expandable?: boolean;
   readonly initialExpanded?: boolean;
 }
-
