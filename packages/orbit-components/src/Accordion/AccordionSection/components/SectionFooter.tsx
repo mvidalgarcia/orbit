@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import defaultTheme from "../../../defaultTheme";
 import * as Common from "../../../common/types";
 
 const Wrapper = styled.div`
@@ -12,6 +13,10 @@ const Wrapper = styled.div`
   box-sizing: border-box;
   box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
 `;
+
+Wrapper.defaultProps = {
+  theme: defaultTheme,
+};
 
 interface Props extends Common.Globals {
   children: React.ReactNode;

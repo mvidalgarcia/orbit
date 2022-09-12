@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 
 import Button from "../../../Button";
 import * as Common from "../../../common/types";
+import defaultTheme from "../../../defaultTheme";
 
 const StyledWrapper = styled.div<{
   expanded: boolean;
@@ -10,12 +11,17 @@ const StyledWrapper = styled.div<{
 }>`
   ${({ theme, expanded }) => css`
     display: flex;
+    padding: ${theme.orbit.spaceLarge};
     background-color: ${theme.orbit.paletteWhite};
     align-items: center;
     min-height: ${expanded ? "19px" : "44px"};
     transition: max-height ${theme.orbit.durationFast} ease-in-out;
   `};
 `;
+
+StyledWrapper.defaultProps = {
+  theme: defaultTheme,
+};
 
 const HeaderContent = styled.div`
   display: flex;

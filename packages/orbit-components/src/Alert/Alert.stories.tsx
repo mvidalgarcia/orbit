@@ -219,33 +219,37 @@ Playground.story = {
   },
 };
 
-export const Rtl = () => (
-  <RenderInRtl>
-    <Alert
-      type="info"
-      icon={<Icons.Airplane />}
-      title="The title of the Alert"
-      closable
-      onClose={action("Close")}
-    >
-      <Stack spacing="XSmall">
-        <Stack spacing="XXSmall">
-          <Text>
-            Requirements found here are for reference purposes only. Contact the embassy or your
-            foreign ministry for more information.
-          </Text>
-          <Heading type="title4">
-            Make sure you know your visa requirements for these countries:
-          </Heading>
-          <List>
-            <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
-          </List>
+export const Rtl = () => {
+  const Icon = getIcon(getIcons("Airplane"));
+
+  return (
+    <RenderInRtl>
+      <Alert
+        type="info"
+        icon={Icon}
+        title="The title of the Alert"
+        closable
+        onClose={action("Close")}
+      >
+        <Stack spacing="XSmall">
+          <Stack spacing="XXSmall">
+            <Text>
+              Requirements found here are for reference purposes only. Contact the embassy or your
+              foreign ministry for more information.
+            </Text>
+            <Heading type="title4">
+              Make sure you know your visa requirements for these countries:
+            </Heading>
+            <List>
+              <ListItem icon={<CountryFlag code="pl" name="Poland" />}>Poland</ListItem>
+            </List>
+          </Stack>
+          <AlertButton type="info">Check Visa Requirements</AlertButton>
         </Stack>
-        <AlertButton type="info">Check Visa Requirements</AlertButton>
-      </Stack>
-    </Alert>
-  </RenderInRtl>
-);
+      </Alert>
+    </RenderInRtl>
+  );
+};
 
 Rtl.story = {
   name: "RTL",

@@ -2,6 +2,7 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import { convertHexToRgba } from "@kiwicom/orbit-design-tokens";
 
+import { Props as IconProps } from "../Icon/types";
 import * as Common from "../common/types";
 import { Type, Props } from "./types";
 import defaultTheme, { Theme } from "../defaultTheme";
@@ -90,29 +91,30 @@ const getTypeToken = (name: string) => ({
   return tokens[name][type];
 };
 
-const StyledIcon: any = styled(({ icon, type, className }) => {
+const StyledIcon = ({ icon, type }: Pick<Props, "icon" | "type">) => {
   // Icon should be boolean and TRUE
   if (typeof icon === "boolean" && icon) {
     if (type === TYPE_OPTIONS.INFO) {
-      return <InformationCircle className={className} size="small" />;
+      return <InformationCircle size="small" />;
     }
     if (type === TYPE_OPTIONS.SUCCESS) {
-      return <Check className={className} size="small" />;
+      return <Check size="small" />;
     }
     if (type === TYPE_OPTIONS.WARNING) {
-      return <AlertTriangle className={className} size="small" />;
+      return <AlertTriangle size="small" />;
     }
     if (type === TYPE_OPTIONS.CRITICAL) {
-      return <AlertCircle className={className} size="small" />;
+      return <AlertCircle size="small" />;
     }
   }
 
-  if (React.isValidElement(icon)) {
-    return React.cloneElement<any>(icon, { size: "small" });
+  if (React.isValidElement(icon) && typeof icon !== "boolean") {
+    // @ts-expect-error TODO
+    return React.cloneElement<IconProps>(icon, { size: "small" });
   }
 
-  return icon;
-});
+  return <>{icon}</>;
+};
 
 const StyledAlert = styled.div<{
   closable?: boolean;
@@ -165,8 +167,8 @@ const StyledIconContainer = styled.div<{ inlineActions: boolean; type: Type }>`
     align-items: ${inlineActions && "center"};
 
     ${media.tablet(css`
-      margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)};
-      ${StyledIcon} {
+      margin: ${rtlSpacing(`0 ${theme.orbit.spaceXSmall} 0 0`)({ theme })};
+      svg {
         width: 20px;
         height: 20px;
       }

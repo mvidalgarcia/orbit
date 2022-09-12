@@ -1,6 +1,12 @@
 import React from "react";
 
-import type { Context } from "./AccordionContext.d";
+import * as Common from "../common/types";
+
+interface Context {
+  readonly onExpand?: Common.Callback;
+  readonly expanded: boolean;
+  readonly loading?: boolean;
+}
 
 export const accordionDefault: Context = {
   onExpand: () => {},

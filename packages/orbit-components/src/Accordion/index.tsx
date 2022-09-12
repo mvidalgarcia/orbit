@@ -5,6 +5,7 @@ import { Provider as SectionProvider } from "./AccordionContext";
 import getSpacingToken from "../common/getSpacingToken";
 import type { Props } from "./types";
 import * as Common from "../common/types";
+import defaultTheme from "../defaultTheme";
 
 interface StyledProps extends Common.SpaceAfter {}
 
@@ -17,6 +18,10 @@ export const StyledAccordion = styled.div<StyledProps>`
     margin-bottom: ${getSpacingToken};
   `};
 `;
+
+StyledAccordion.defaultProps = {
+  theme: defaultTheme,
+};
 
 const Accordion = ({
   children,

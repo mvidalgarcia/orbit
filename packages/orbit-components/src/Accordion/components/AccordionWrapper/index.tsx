@@ -4,6 +4,7 @@ import React from "react";
 import { CardElement } from "../../../Card/helpers/mixins";
 import { getBorder, getBorderRadius } from "../../../Card/helpers/borders";
 import { Props } from "./types";
+import defaultTheme from "../../../defaultTheme";
 
 const StyledAccordionWrapper = styled.div<{ expanded?: boolean }>`
   ${CardElement};
@@ -12,6 +13,10 @@ const StyledAccordionWrapper = styled.div<{ expanded?: boolean }>`
   transition: margin ${({ theme }) => theme.orbit.durationFast} ease-in-out;
   margin: ${({ theme }) => theme.orbit.spaceXSmall} 0;
 `;
+
+StyledAccordionWrapper.defaultProps = {
+  theme: defaultTheme,
+};
 
 const AccordionWrapper = ({ dataTest, initialExpanded, ...props }: Props) => (
   <StyledAccordionWrapper

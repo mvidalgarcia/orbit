@@ -20,16 +20,14 @@ interface StyledProps extends Props {
   theme: Theme;
 }
 
-const getViewportFlexStyles = (viewport: Devices) => (props: StyledProps): string => {
+const getViewportFlexStyles = (viewport: Devices) => (props: StyledProps) => {
   const { flex, theme } = props;
   const { inline, direction, wrap, grow, shrink, basis, justify, align, spaceAfter } = props[
     viewport
   ];
 
-  return `
-    ${
-      flex &&
-      css`
+  const flexStyles = flex
+    ? css`
         display: ${getDisplay(inline)};
         flex-direction: ${getDirection(direction)};
         flex-wrap: ${getWrap(wrap)};
@@ -40,7 +38,10 @@ const getViewportFlexStyles = (viewport: Devices) => (props: StyledProps): strin
         align-content: ${getAlign(align)};
         align-items: ${getAlign(align)};
       `
-    };
+    : "";
+
+  return css`
+    ${flexStyles};
     width: ${getWidth(inline)};
     margin-bottom: ${getSpacingToken({ spaceAfter, theme })};
   `;

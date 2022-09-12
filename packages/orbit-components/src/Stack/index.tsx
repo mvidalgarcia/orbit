@@ -7,8 +7,8 @@ import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "../utils/layout/consts";
 import { DEVICES } from "../utils/mediaQuery/consts";
 import { isDefined } from "../utils/layout";
 import getGap from "./helpers/getGap";
-import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
 import shouldUseFlex from "./helpers/shouldUseFlex";
+import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
 import { Props } from "./types";
 
 const StyledStack = styled(({ className, element: Element, children, dataTest }) => (
