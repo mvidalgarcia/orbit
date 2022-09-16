@@ -1,4 +1,5 @@
 /* eslint-disable no-param-reassign */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
 
 const config = {
@@ -35,6 +36,8 @@ const config = {
 
       return cfg;
     }
+
+    return undefined;
   },
 };
 

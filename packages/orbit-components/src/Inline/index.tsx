@@ -20,7 +20,7 @@ const StyledInlineInner = styled.div<{
   ${({ viewportSizes }) => {
     return Object.keys(viewportSizes).map(query => {
       const value = viewportSizes[query];
-      if (query !== DEVICES_CONSTS[0] && typeof value !== "undefined") {
+      if (query !== Object.values(DEVICES_CONSTS)[0] && typeof value !== "undefined") {
         return media[query](css`
           ${normalize(value)}
         `);
