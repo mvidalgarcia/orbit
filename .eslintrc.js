@@ -81,6 +81,7 @@ module.exports = {
           "./tsconfig.json",
           "./packages/*/tsconfig.json",
           "./packages/*/scripts/tsconfig.json",
+          "./packages/orbit-components/.storybook/tsconfig.json",
           "./docs/tsconfig.json",
           "./packages/orbit-components/cypress/tsconfig.json",
         ],

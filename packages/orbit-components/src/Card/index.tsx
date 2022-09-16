@@ -53,7 +53,7 @@ const Card = ({
 
   // Currently disable that code, becuase of IE 11, where it does not work
   // It will be fixed later, when we'll find solution
-  const renderSection = (item, index) => {
+  const renderSection = item => {
     if (React.isValidElement(item)) {
       // if (item.props.children && item.type.name !== "CardSection") {
       //   return React.createElement(CardSection, {
@@ -114,11 +114,11 @@ const Card = ({
                 {loading ? (
                   <CardWrapper noPadding>
                     <Loading loading={loading} type="boxLoader">
-                      {renderSection(item, index)}
+                      {renderSection(item)}
                     </Loading>
                   </CardWrapper>
                 ) : (
-                  renderSection(item, index)
+                  renderSection(item)
                 )}
               </SectionProvider>
             );
