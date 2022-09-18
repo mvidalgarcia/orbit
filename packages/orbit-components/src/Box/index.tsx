@@ -7,11 +7,13 @@ import { DEVICES as DEVICES_CONSTS } from "../utils/mediaQuery/consts";
 import normalize from "./normalize";
 import { Props } from "./types";
 
-const StyledBox = styled(({ className, asComponent: Element, children, dataTest, id, ref }) => (
-  <Element className={className} data-test={dataTest} id={id} ref={ref}>
-    {children}
-  </Element>
-))`
+const StyledBox = styled(
+  ({ className, asComponent: Element, children, dataTest, id, forwardRef }) => (
+    <Element className={className} data-test={dataTest} id={id} ref={forwardRef}>
+      {children}
+    </Element>
+  ),
+)`
   font-family: ${({ theme }) => theme.orbit.fontFamily};
   box-sizing: border-box;
   ${({ viewports }) => {
@@ -52,7 +54,7 @@ const Box = React.forwardRef<HTMLDivElement, Props>(
 
     return (
       <StyledBox
-        ref={ref}
+        forwardRef={ref}
         asComponent={as}
         id={id}
         dataTest={dataTest}

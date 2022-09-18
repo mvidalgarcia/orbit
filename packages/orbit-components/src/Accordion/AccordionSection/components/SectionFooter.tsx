@@ -4,7 +4,7 @@ import styled from "styled-components";
 import defaultTheme from "../../../defaultTheme";
 import * as Common from "../../../common/types";
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   display: flex;
   padding: ${({ theme }) => theme.orbit.spaceLarge};
   background-color: ${({ theme }) => theme.orbit.paletteWhite};
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   box-shadow: ${({ theme }) => theme.orbit.boxShadowActionActive};
 `;
 
-Wrapper.defaultProps = {
+StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -23,7 +23,7 @@ interface Props extends Common.Globals {
 }
 
 const AccordionSectionFooter = ({ children, dataTest }: Props) => (
-  <Wrapper data-test={dataTest && `${dataTest}Footer`}>{children}</Wrapper>
+  <StyledWrapper data-test={dataTest && `${dataTest}Footer`}>{children}</StyledWrapper>
 );
 
 export default AccordionSectionFooter;

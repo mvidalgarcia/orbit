@@ -34,6 +34,10 @@ const HeaderActions = styled.div`
   margin-left: ${({ theme }) => theme.orbit.spaceLarge};
 `;
 
+HeaderActions.defaultProps = {
+  theme: defaultTheme,
+};
+
 interface Props extends Common.Globals {
   readonly children: React.ReactNode;
   readonly expanded: boolean;

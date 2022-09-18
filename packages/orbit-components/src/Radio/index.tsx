@@ -221,7 +221,7 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         id={id}
         onChange={onChange}
         name={name}
-        tabIndex={Number(tabIndex)}
+        tabIndex={tabIndex ? Number(tabIndex) : undefined}
         ref={ref}
         readOnly={readOnly}
         hasError={hasError}

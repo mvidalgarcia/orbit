@@ -1,25 +1,28 @@
 import * as React from "react";
-import { render, cleanup } from "@testing-library/react";
+import { render, cleanup, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import ClickOutside from "..";
 
 describe("ClickOutside", () => {
-  it("should trigger when clicked outside", () => {
+  it("should trigger when clicked outside", async () => {
     const insideRef = React.createRef<HTMLDivElement>();
     const outsideRef = React.createRef<HTMLDivElement>();
     const onClickOutside = jest.fn();
 
-    render(
-      <div ref={outsideRef}>
-        <ClickOutside onClickOutside={onClickOutside}>
-          <div ref={insideRef}>Lorem ipsum</div>
-        </ClickOutside>
-      </div>,
-    );
+    act(() => {
+      render(
+        <div ref={outsideRef}>
+          <ClickOutside onClickOutside={onClickOutside}>
+            <div ref={insideRef}>Lorem ipsum</div>
+          </ClickOutside>
+        </div>,
+      );
 
-    userEvent.click(insideRef.current as HTMLDivElement);
-    expect(onClickOutside).not.toHaveBeenCalled();
+      userEvent.click(insideRef.current as HTMLDivElement);
+      expect(onClickOutside).not.toHaveBeenCalled();
+    });
+
     userEvent.click(outsideRef.current as HTMLDivElement);
     expect(onClickOutside).toHaveBeenCalled();
   });

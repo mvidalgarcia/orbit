@@ -164,7 +164,7 @@ const TileHeader = ({
     aria-expanded={ariaExpanded}
     aria-controls={ariaControls}
     id={id}
-    tabIndex={Number(tabIndex)}
+    tabIndex={tabIndex ? Number(tabIndex) : undefined}
   >
     <Stack align="center" justify="between" shrink spacing="none">
       {icon && <StyledTileIcon>{icon}</StyledTileIcon>}

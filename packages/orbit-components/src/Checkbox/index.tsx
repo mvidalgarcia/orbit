@@ -236,7 +236,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         type="checkbox"
         disabled={disabled}
         name={name}
-        tabIndex={Number(tabIndex)}
+        tabIndex={tabIndex ? Number(tabIndex) : undefined}
         checked={checked}
         onChange={onChange}
         ref={ref}

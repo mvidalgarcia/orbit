@@ -17,7 +17,7 @@ describe("InputStepper", () => {
         disabled
         maxValue={100}
         minValue={1}
-        tabIndex="-1"
+        tabIndex={-1}
         readOnly
         required
         titleIncrement="Add"

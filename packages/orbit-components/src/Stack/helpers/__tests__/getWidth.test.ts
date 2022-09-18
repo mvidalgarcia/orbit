@@ -2,7 +2,7 @@ import getWidth from "../getWidth";
 
 describe("#getWidth", () => {
   it("should return false", () => {
-    expect(getWidth(true)).toBe(false);
+    expect(getWidth(true)).toBe("");
   });
 
   it("should return 100%", () => {

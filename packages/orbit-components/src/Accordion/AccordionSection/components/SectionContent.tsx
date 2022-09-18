@@ -4,11 +4,11 @@ import styled from "styled-components";
 import defaultTheme from "../../../defaultTheme";
 import * as Common from "../../../common/types";
 
-const Wrapper = styled.div`
+const StyledWrapper = styled.div`
   padding: ${({ theme }) => `0 ${theme.orbit.spaceLarge} ${theme.orbit.spaceLarge}`};
 `;
 
-Wrapper.defaultProps = {
+StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
 
@@ -17,7 +17,7 @@ interface Props extends Common.Globals {
 }
 
 const AccordionSectionContent = ({ children, dataTest }: Props) => (
-  <Wrapper data-test={dataTest && `${dataTest}Content`}>{children}</Wrapper>
+  <StyledWrapper data-test={dataTest && `${dataTest}Content`}>{children}</StyledWrapper>
 );
 
 export default AccordionSectionContent;

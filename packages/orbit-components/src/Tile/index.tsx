@@ -56,7 +56,7 @@ const Tile = ({
       onClick={onClick}
       onKeyDown={handleKeyDown(onClick)}
       as={as}
-      tabIndex={!href ? "0" : undefined}
+      tabIndex={!href ? 0 : undefined}
       role={onClick ? "button" : undefined}
       htmlTitle={htmlTitle}
     >

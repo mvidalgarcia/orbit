@@ -43,6 +43,7 @@ describe("Desktop", () => {
 
       <div
         class="c0"
+        on="smallMobile,mediumMobile,largeMobile,tablet"
       >
         kek
       </div>

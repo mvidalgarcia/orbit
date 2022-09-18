@@ -164,7 +164,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, Props>(
           onBlur={onBlur}
           resize={resize}
           readOnly={readOnly}
-          tabIndex={Number(tabIndex)}
+          tabIndex={tabIndex ? Number(tabIndex) : undefined}
           required={required}
           ref={ref}
         />

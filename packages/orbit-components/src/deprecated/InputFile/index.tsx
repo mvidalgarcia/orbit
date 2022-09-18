@@ -134,7 +134,7 @@ const InputFile = React.forwardRef<HTMLInputElement, Props>(
           onBlur={onBlur}
           accept={Array.isArray(allowedFileTypes) ? allowedFileTypes.join(",") : allowedFileTypes}
           ref={ref}
-          tabIndex={Number(tabIndex)}
+          tabIndex={tabIndex ? Number(tabIndex) : undefined}
         />
         {label && <FormLabel filled={Boolean(fileName)}>{label}</FormLabel>}
         <FakeInput error={error}>

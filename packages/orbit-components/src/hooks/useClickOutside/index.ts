@@ -1,27 +1,22 @@
 import React from "react";
 
+import useEventListener from "../useEventListener";
+
 const useClickOutside = <T extends HTMLElement>(
   ref: React.RefObject<T>,
-  handler: (ev: React.SyntheticEvent<T>) => void,
+  handler: (ev: MouseEvent) => void,
+  mouseEvent: "mousedown" | "mouseup" = "mousedown",
 ): void => {
-  React.useEffect(() => {
-    const handleClose = (event: React.SyntheticEvent<T>) => {
-      if (ref.current && !ref.current.contains(event.currentTarget as Node)) {
-        handler(event);
-      }
-    };
+  useEventListener(mouseEvent, event => {
+    const el = ref?.current;
 
-    // @ts-expect-error TODO FIXME: conflict between node and react types
-    window.addEventListener("mousedown", handleClose);
-    // @ts-expect-error TODO FIXME: conflict between node and react types
-    window.addEventListener("touchstart", handleClose);
-    return () => {
-      // @ts-expect-error TODO FIXME: conflict between node and react types
-      window.removeEventListener("mousedown", handleClose);
-      // @ts-expect-error TODO FIXME: conflict between node and react types
-      window.removeEventListener("touchstart", handleClose);
-    };
-  }, [handler, ref]);
+    // Do nothing if clicking ref's element or descendent elements
+    if (!el || el.contains(event.target as Node)) {
+      return;
+    }
+
+    handler(event);
+  });
 };
 
 export default useClickOutside;

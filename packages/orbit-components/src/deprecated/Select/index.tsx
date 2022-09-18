@@ -73,7 +73,7 @@ const StyledSelect = styled(
         onBlur={onBlur}
         disabled={disabled}
         name={name}
-        tabIndex={Number(tabIndex)}
+        tabIndex={tabIndex ? Number(tabIndex) : undefined}
         ref={ref}
         {...dataAttrs}
       >
@@ -313,7 +313,7 @@ const Select = React.forwardRef<HTMLSelectElement, Props>((props, ref) => {
           onChange={onChange}
           filled={filled}
           customValueText={customValueText}
-          tabIndex={Number(tabIndex)}
+          tabIndex={tabIndex ? Number(tabIndex) : undefined}
           id={id}
           readOnly={readOnly}
           required={required}

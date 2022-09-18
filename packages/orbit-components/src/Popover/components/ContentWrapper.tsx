@@ -37,7 +37,7 @@ export interface Props extends Common.Globals {
   lockScrolling?: boolean;
   actions?: React.ReactNode;
   offset?: Offset;
-  onClose: (ev: React.SyntheticEvent<HTMLElement>) => void;
+  onClose: Common.Callback;
 }
 
 const StyledContentWrapper = styled.div<{
@@ -285,12 +285,12 @@ const PopoverContentWrapper = ({
     };
   }, [update, actions, setActionsHeight]);
 
-  useClickOutside(content, (ev: React.SyntheticEvent<HTMLElement>) => {
-    if (isLargeMobile) onClose(ev);
+  useClickOutside(content, () => {
+    if (isLargeMobile) onClose();
   });
 
   const handleKeyDown = (ev: React.KeyboardEvent<HTMLDivElement>) => {
-    if (ev.keyCode === 27 && onClose) onClose(ev);
+    if (ev.keyCode === 27 && onClose) onClose();
   };
 
   return (

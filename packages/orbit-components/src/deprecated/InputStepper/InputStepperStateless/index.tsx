@@ -80,7 +80,7 @@ const InputStepperStateless = ({
         value={value}
         minValue={minValue}
         maxValue={maxValue}
-        tabIndex={Number(tabIndex)}
+        tabIndex={tabIndex ? Number(tabIndex) : undefined}
         ref={forwardedRef || undefined}
         prefix={
           <ButtonLink

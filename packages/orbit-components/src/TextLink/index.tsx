@@ -92,13 +92,13 @@ StyledIconContainer.defaultProps = {
 const resolveUnderline = ({
   type,
   theme,
-  noUnderline,
+  $noUnderline,
 }: {
   type: Type;
   theme: Theme;
-  noUnderline: boolean;
+  $noUnderline: boolean;
 }) => {
-  if (noUnderline) return "none";
+  if ($noUnderline) return "none";
   return type === TYPE_OPTIONS.SECONDARY
     ? theme.orbit.textDecorationTextLinkSecondary
     : theme.orbit.textDecorationTextLinkPrimary;
@@ -132,7 +132,7 @@ export const getLinkStyle = ({ theme }: { theme: Theme; type: Props["type"] }) =
 export const StyledTextLink = styled(({ asComponent: Component, ...props }) => (
   <Component {...props}>{props.children}</Component>
 ))`
-  ${({ theme, standAlone, size }) => css`
+  ${({ theme, $standAlone, size }) => css`
     font-family: ${theme.orbit.fontFamily};
     font-weight: ${theme.orbit.fontWeightLinks};
     font-size: ${getSizeToken({ theme, size })};
@@ -140,7 +140,7 @@ export const StyledTextLink = styled(({ asComponent: Component, ...props }) => (
     display: inline-flex;
     align-items: center;
     transition: color ${theme.orbit.durationFast} ease-in-out;
-    height: ${standAlone && theme.orbit.heightButtonNormal};
+    height: ${$standAlone && theme.orbit.heightButtonNormal};
     ${getLinkStyle};
   `}
 `;
@@ -195,12 +195,12 @@ const TextLink = ({
       rel={createRel({ href, external, rel })}
       onClick={onClickHandler}
       data-test={dataTest}
-      tabIndex={tabIndex || (!href ? "0" : undefined)}
+      tabIndex={tabIndex || (!href ? 0 : undefined)}
       role={!href ? "button" : undefined}
       asComponent={asComponent}
       title={title}
-      noUnderline={noUnderline}
-      standAlone={standAlone}
+      $noUnderline={noUnderline}
+      $standAlone={standAlone}
     >
       <IconContainer>{iconLeft}</IconContainer>
       {children}

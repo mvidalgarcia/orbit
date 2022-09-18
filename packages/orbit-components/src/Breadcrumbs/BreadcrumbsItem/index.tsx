@@ -14,10 +14,10 @@ const StyledBreadcrumbsItemAnchor = styled(({ component, children, isClickable, 
   const Component = isClickable ? component : "div";
   return <Component {...props}>{children}</Component>;
 })`
-  ${({ theme, active, isClickable }) => css`
-    font-weight: ${active ? theme.orbit.fontWeightBold : theme.orbit.fontWeightMedium};
+  ${({ theme, $active, isClickable }) => css`
+    font-weight: ${$active ? theme.orbit.fontWeightBold : theme.orbit.fontWeightMedium};
     color: ${theme.orbit.paletteInkDark};
-    text-decoration: ${isClickable && !active ? "underline" : "none"};
+    text-decoration: ${isClickable && !$active ? "underline" : "none"};
 
     ${isClickable &&
     css`
@@ -79,7 +79,7 @@ const BreadcrumbsItem = ({
         isClickable={href || onClick}
         href={href}
         component={component}
-        active={active}
+        $active={active}
         onClick={onClick}
         itemScope
         itemType="http://schema.org/WebPage"
