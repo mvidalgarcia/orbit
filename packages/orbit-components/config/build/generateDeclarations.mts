@@ -18,7 +18,7 @@ export default async function generateTypeDeclarations() {
   const tsDeclarations = await globby("{lib,es}/**/*.d.ts");
   await Promise.all(
     tsDeclarations.map(async tsDeclPath => {
-      const flowDeclPath = tsDeclPath.replace(".d.ts", ".jsx.flow");
+      const flowDeclPath = tsDeclPath.replace(".d.ts", ".js.flow");
       try {
         if (await fs.pathExists(flowDeclPath)) return;
         const flowDecl = flowgen.compiler.compileDefinitionFile(tsDeclPath, {
@@ -30,6 +30,8 @@ export default async function generateTypeDeclarations() {
                 .replace("import React from", "import * as React from")
                 .replace("React.FC", "React.StatelessFunctionalComponent")}
             `;
+
+        console.log("content", content);
         await fs.writeFile(flowDeclPath, content);
       } catch (err) {
         if (err instanceof Error) {

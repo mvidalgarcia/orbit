@@ -1,7 +1,7 @@
-// flow-typed signature: e3af2fa52d8b68d50f28a98fe6a6d971
-// flow-typed version: 76f8523085/jest_v26.x.x/flow_>=v0.134.x
+// flow-typed signature: fd6b1d81136037fad6c4e96fa7354af4
+// flow-typed version: 3153a3ba01/jest_v28.x.x/flow_>=v0.134.x
 
-type JestMockFn<TArguments: $ReadOnlyArray<*>, TReturn> = {
+type JestMockFn<TArguments: $ReadOnlyArray<any>, TReturn> = {
   (...args: TArguments): TReturn,
   /**
    * An object for introspecting mock calls
@@ -13,6 +13,12 @@ type JestMockFn<TArguments: $ReadOnlyArray<*>, TReturn> = {
      * passed during the call.
      */
     calls: Array<TArguments>,
+    /**
+     * An array containing the call arguments of the last call that was made
+     * to this mock function. If the function was not called, it will return
+     * undefined.
+     */
+    lastCall: TArguments,
     /**
      * An array that contains all the object instances that have been
      * instantiated from this mock function.
@@ -161,6 +167,32 @@ type JestPromiseType = {
  */
 type JestTestName = string | Function;
 
+type FakeableAPI =
+  | 'Date'
+  | 'hrtime'
+  | 'nextTick'
+  | 'performance'
+  | 'queueMicrotask'
+  | 'requestAnimationFrame'
+  | 'cancelAnimationFrame'
+  | 'requestIdleCallback'
+  | 'cancelIdleCallback'
+  | 'setImmediate'
+  | 'clearImmediate'
+  | 'setInterval'
+  | 'clearInterval'
+  | 'setTimeout'
+  | 'clearTimeout';
+
+type FakeTimersConfig = {
+  advanceTimers?: boolean | number,
+  doNotFake?: Array<FakeableAPI>,
+  now?: number | Date,
+  timerLimit?: number,
+  legacyFakeTimers?: boolean,
+  ...
+};
+
 /**
  *  Plugin: jest-styled-components
  */
@@ -259,6 +291,9 @@ type DomTestingLibraryType = {
   // 5.x
   toHaveDisplayValue(value: string | string[]): void,
   toBeChecked(): void,
+  toBeEmptyDOMElement(): void,
+  toBePartiallyChecked(): void,
+  toHaveDescription(text: string | RegExp): void,
   ...
 };
 
@@ -831,10 +866,14 @@ type JestObjectType = {
    */
   isMockFunction(fn: Function): boolean,
   /**
+   * Alias of `createMockFromModule`.
+   */
+  genMockFromModule(moduleName: string): any,
+  /**
    * Given the name of a module, use the automatic mocking system to generate a
    * mocked version of the module for you.
    */
-  genMockFromModule(moduleName: string): any,
+  createMockFromModule(moduleName: string): any,
   /**
    * Mocks a module with an auto-mocked version when it is being required.
    *
@@ -890,13 +929,6 @@ type JestObjectType = {
    */
   advanceTimersByTime(msToRun: number): void,
   /**
-   * Executes only the macro task queue (i.e. all tasks queued by setTimeout()
-   * or setInterval() and setImmediate()).
-   *
-   * Renamed to `advanceTimersByTime`.
-   */
-  runTimersToTime(msToRun: number): void,
-  /**
    * Executes only the macro-tasks that are currently pending (i.e., only the
    * tasks that have been queued by setTimeout() or setInterval() up to this
    * point)
@@ -919,7 +951,7 @@ type JestObjectType = {
    * (setTimeout, setInterval, clearTimeout, clearInterval, nextTick,
    * setImmediate and clearImmediate).
    */
-  useFakeTimers(mode?: 'modern' | 'legacy'): JestObjectType,
+  useFakeTimers(fakeTimersConfig?: FakeTimersConfig): JestObjectType,
   /**
    * Instructs Jest to use the real versions of the standard timer functions.
    */
@@ -1040,11 +1072,20 @@ declare var it: {
    * @param {Function} Test
    * @param {number} Timeout for the test, in milliseconds.
    */
-  skip(
-    name: JestTestName,
-    fn?: (done: JestDoneFn) => ?Promise<mixed>,
-    timeout?: number
-  ): void,
+  skip: {|
+    (
+      name: JestTestName,
+      fn?: (done: JestDoneFn) => ?Promise<mixed>,
+      timeout?: number
+    ): void,
+    each(
+      ...table: Array<Array<mixed> | mixed> | [Array<string>, string]
+    ): (
+      name: JestTestName,
+      fn?: (...args: Array<any>) => ?Promise<mixed>,
+      timeout?: number
+    ) => void,
+  |},
   /**
    * Highlight planned tests in the summary output
    *
