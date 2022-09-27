@@ -21,3 +21,6 @@ docs/public
 
 # orbit design tokens
 packages/orbit-design-tokens/output/
+
+# transforms
+packages/orbit-components/transforms/__testfixtures__/*

@@ -1,5 +1,5 @@
 import { $, fs, chalk, globby } from "zx";
-import flowgen from "flowgen";
+import flowgen, { beautify } from "flowgen";
 import dedent from "dedent";
 import filedirname from "filedirname";
 
@@ -21,17 +21,14 @@ export default async function generateTypeDeclarations() {
       const flowDeclPath = tsDeclPath.replace(".d.ts", ".js.flow");
       try {
         if (await fs.pathExists(flowDeclPath)) return;
-        const flowDecl = flowgen.compiler.compileDefinitionFile(tsDeclPath, {
-          interfaceRecords: true,
-        });
-        const content = dedent`
-              // @flow
-              ${flowDecl
-                .replace("import React from", "import * as React from")
-                .replace("React.FC", "React.StatelessFunctionalComponent")}
-            `;
+        const flowDecl = beautify(
+          flowgen.compiler.compileDefinitionFile(tsDeclPath, {
+            interfaceRecords: true,
+          }),
+        );
 
-        console.log("content", content);
+        const content = ["// @flow", flowDecl].join("\n");
+
         await fs.writeFile(flowDeclPath, content);
       } catch (err) {
         if (err instanceof Error) {
@@ -45,4 +42,7 @@ export default async function generateTypeDeclarations() {
       }
     }),
   );
+
+  await $`yarn jscodeshift -t config/flowAst.ts packages/orbit-components/lib/**/*.js.flow`;
+  await $`yarn jscodeshift -t config/flowAst.ts packages/orbit-components/es/**/*.js.flow`;
 }
