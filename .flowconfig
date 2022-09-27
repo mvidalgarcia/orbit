@@ -1,7 +1,7 @@
 [ignore]
-./packages/orbit-components/es/.*
-./packages/orbit-components/lib/.*
-./packages/orbit-components/umd/.*
+<PROJECT_ROOT>/packages/*/es/.*
+<PROJECT_ROOT>/packages/*/lib/.*
+<PROJECT_ROOT>/packages/*/umd/.*
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/dist/
 <PROJECT_ROOT>/packages/babel-plugin-orbit-components/__fixtures__/
 
