@@ -1,4 +1,4 @@
-import { $, fs, chalk, globby } from "zx";
+import { $, fs, chalk, globby, path } from "zx";
 import flowgen, { beautify } from "flowgen";
 import dedent from "dedent";
 import filedirname from "filedirname";
@@ -43,6 +43,13 @@ export default async function generateTypeDeclarations() {
     }),
   );
 
-  await $`yarn jscodeshift -t config/flowAst.ts packages/orbit-components/lib/**/*.js.flow`;
-  await $`yarn jscodeshift -t config/flowAst.ts packages/orbit-components/es/**/*.js.flow`;
+  await $`yarn jscodeshift -t ${path.resolve(__dirname, "../../transforms/flowAst.ts")} ${path.join(
+    __dirname,
+    "../../lib/**/*.js.flow",
+  )}`;
+
+  await $`yarn jscodeshift -t ${path.resolve(__dirname, "../../transforms/flowAst.ts")} ${path.join(
+    __dirname,
+    "../../es/**/*.js.flow",
+  )}`;
 }
