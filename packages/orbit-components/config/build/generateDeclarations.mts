@@ -43,13 +43,13 @@ export default async function generateTypeDeclarations() {
     }),
   );
 
-  await $`yarn jscodeshift -t ${path.resolve(__dirname, "../../transforms/flowAst.ts")} ${path.join(
+  await $`yarn jscodeshift -t ${path.resolve(
     __dirname,
-    "../../lib/**/*.js.flow",
-  )}`;
+    "../../transforms/flowAst.ts",
+  )} ../../lib/**/*.js.flow --parser="flow"`;
 
-  await $`yarn jscodeshift -t ${path.resolve(__dirname, "../../transforms/flowAst.ts")} ${path.join(
+  await $`yarn jscodeshift -t ${path.resolve(
     __dirname,
-    "../../es/**/*.js.flow",
-  )}`;
+    "../../transforms/flowAst.ts",
+  )} ../../es/**/*.js.flow --parser="flow"`;
 }

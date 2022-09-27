@@ -1,4 +1,4 @@
-import { css, FlattenInterpolation, ThemeProps, DefaultTheme } from "styled-components";
+import { css, FlattenInterpolation, ThemeProps } from "styled-components";
 
 import { left, right } from "../utils/rtl";
 import { Status } from "./WizardContext";
@@ -16,7 +16,7 @@ export const resolveStepBorder = ({
   status: Status;
   isLastStep: boolean;
   nextStepStatus: Status;
-}) => ({ theme }: { theme: Theme }): FlattenInterpolation<ThemeProps<DefaultTheme>> => {
+}) => ({ theme }: { theme: Theme }): FlattenInterpolation<ThemeProps<Theme>> => {
   return css`
     ${isColumnOnDesktop
       ? css`

@@ -19,5 +19,5 @@ export interface Props extends Common.Globals {
   // Should be InputEvent type
   // There is missing support for this event type in Typescript ATM
   // @see https://fettblog.eu/typescript-react/events/#wheres-inputevent
-  readonly onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  readonly onChange?: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 }

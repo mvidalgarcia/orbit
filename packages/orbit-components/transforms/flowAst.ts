@@ -3,6 +3,17 @@ function transformFlow(fileInfo, api) {
   const j = api.jscodeshift;
   const root = j(fileInfo.source);
 
+  // FlattenSimpleInterpolation -> InterpolationBase
+  root.find(j.Identifier).forEach(path => {
+    if (path.node.name === "FlattenSimpleInterpolation") {
+      path.node.name = "InterpolationBase";
+    }
+
+    if (path.node.name === "FlattenInterpolation") {
+      path.node.name = "Interpolation";
+    }
+  });
+
   // import React from "react" -> import * as React from "react"
   root
     .find(j.ImportDefaultSpecifier)
@@ -13,12 +24,13 @@ function transformFlow(fileInfo, api) {
     })
     .toSource();
 
+  // add type importKind
+  // import { Props } -> import type { Props }
   root.find(j.ImportDeclaration).forEach(path => {
-    if (
-      path.node.source.value.includes("types") ||
-      path.node.source.value.includes("defaultTheme")
-    ) {
-      path.node.importKind = "type";
+    if (path.node.specifiers[0].type !== "ImportNamespaceSpecifier") {
+      if (path.node.id.name !== "defaultTheme" || path.node.id.name !== "React") {
+        path.node.importKind = "type";
+      }
     }
   });
 
@@ -28,7 +40,14 @@ function transformFlow(fileInfo, api) {
       if (id.qualification.name === "React") {
         // React.SyntheticEvent -> SyntheticEvent
         // React.MouseEvent -> MouseEvent
-        if (id.id.name === "SyntheticEvent" || id.id.name === "MouseEvent") {
+        if (
+          id.id.name === "SyntheticEvent" ||
+          id.id.name === "MouseEvent" ||
+          id.id.name === "KeyboardEvent" ||
+          id.id.name === "FocusEvent" ||
+          id.id.name === "ChangeEvent" ||
+          id.id.name === "TouchEvent"
+        ) {
           path.node.id = j.identifier(id.id.name);
         }
         // React.FunctionComponent -> React.ComponentType
@@ -63,6 +82,10 @@ function transformFlow(fileInfo, api) {
         // React.ReactNode -> React.Node
         if (id.id.name === "ReactNode") {
           path.node.id = j.identifier("Node");
+        }
+
+        if (id.id.name === "ReactPortal") {
+          path.node.id = j.identifier("Portal");
         }
       }
     }
