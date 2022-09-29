@@ -16,7 +16,7 @@ const StyledCoupon = styled.mark`
     line-height: inherit;
     font-weight: ${theme.orbit.fontWeightMedium};
     border-radius: ${theme.orbit.borderRadiusNormal};
-    color: ${theme.orbit.paletteInkNormal};
+    color: ${theme.orbit.paletteInkDark};
   `}
 `;
 

@@ -227,7 +227,6 @@ const Radio = React.forwardRef<HTMLInputElement, Props>((props, ref) => {
         hasError={hasError}
       />
       {cloneWithTooltip(
-        // @ts-expect-error TODO
         tooltip,
         <StyledIconContainer disabled={disabled} checked={checked}>
           <Glyph disabled={disabled} />

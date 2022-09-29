@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import { Option, Props as Properties } from "..";
+import { Option, Props as Properties } from "../types";
 
 export interface Props extends Option {
   readonly onChange: Properties["onChange"];

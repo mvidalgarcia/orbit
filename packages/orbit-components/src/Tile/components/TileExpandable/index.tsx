@@ -36,8 +36,10 @@ const TileExpandable = ({
   dataTest,
   htmlTitle,
 }: React.PropsWithChildren<Props>) => {
-  const [isExpanded, setExpanded] = React.useState(initialExpanded);
-  const [{ height }, node] = useBoundingRect({ height: initialExpanded ? null : 0 });
+  const [isExpanded, setExpanded] = React.useState<boolean | undefined>(initialExpanded);
+  const [{ height }, node] = useBoundingRect<HTMLDivElement>({
+    height: initialExpanded ? null : 0,
+  });
 
   const isControlled = React.useMemo(() => expanded != null, [expanded]);
 

@@ -19,9 +19,9 @@ const StyledLink = styled.a`
     width: 1px;
     font-family: ${theme.orbit.fontFamily};
     text-decoration: ${theme.orbit.textDecorationTextLinkPrimary};
-    font-size: ${theme.orbit.fontSizeTextLarge}; /* TODO: ADD TOKEN */
-    border-radius: ${theme.orbit.borderRadiusNormal}; /* TODO: ADD TOKEN */
-    color: ${theme.orbit.paletteInkNormal}; /* TODO: ADD TOKEN */
+    font-size: ${theme.orbit.fontSizeTextLarge};
+    border-radius: ${theme.orbit.borderRadiusNormal};
+    color: ${theme.orbit.paletteInkDark};
 
     &:focus {
       top: 1rem;
@@ -31,9 +31,9 @@ const StyledLink = styled.a`
       width: auto;
       margin: 0;
       overflow: visible;
-      padding: ${theme.orbit.spaceMedium}; /* TODO: ADD TOKEN */
-      background-color: ${theme.orbit.paletteWhite}; /* TODO: ADD TOKEN */
-      z-index: ${theme.orbit.zIndexOnTheTop}; /* TODO: ADD TOKEN */
+      padding: ${theme.orbit.spaceMedium};
+      background-color: ${theme.orbit.paletteWhite};
+      z-index: ${theme.orbit.zIndexOnTheTop};
     }
   `}
 `;

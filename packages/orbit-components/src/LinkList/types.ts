@@ -7,7 +7,7 @@ import * as Common from "../common/types";
 import { Spacing } from "../Stack/types";
 
 export interface Props extends Common.Globals {
-  readonly direction?: "column" | "row";
+  readonly direction?: "column" | "row" | "row-reverse" | "column-reverse";
   readonly indent?: boolean;
   readonly spacing?: Spacing;
   readonly children: React.ReactNode;

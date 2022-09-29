@@ -9,10 +9,11 @@ import TooltipContent from "./components/TooltipContent";
 import useStateWithTimeout from "../../hooks/useStateWithTimeout";
 import { Props } from "./types";
 
-<<<<<<< HEAD:packages/orbit-components/src/primitives/TooltipPrimitive/index.jsx
-import type { Props } from ".";
-
-export const StyledTooltipChildren: any = styled.span`
+export const StyledTooltipChildren = styled.span<{
+  block?: Props["block"];
+  enabled?: Props["enabled"];
+  removeUnderlinedText?: Props["removeUnderlinedText"];
+}>`
   ${({ block, enabled, removeUnderlinedText }) => css`
     display: ${block ? "flex" : "inline-flex"};
     max-width: 100%;
@@ -20,23 +21,6 @@ export const StyledTooltipChildren: any = styled.span`
       outline: none;
     }
     ${enabled &&
-=======
-export const StyledTooltipChildren = styled.span<{
-  block?: boolean;
-  enabled?: boolean;
-  removeUnderlinedText?: boolean;
-}>`
-  ${({ block }) =>
-    !block &&
-    css`
-      display: inline-flex;
-    `};
-  &:focus:active {
-    outline: none;
-  }
-  ${({ enabled, removeUnderlinedText }) =>
-    enabled &&
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/primitives/TooltipPrimitive/index.tsx
     !removeUnderlinedText &&
     css`
       ${StyledText} {
@@ -95,7 +79,7 @@ const TooltipPrimitive = ({
   }, [setRenderWithTimeout]);
 
   const handleClick = React.useCallback(
-    ev => {
+    (ev: React.MouseEvent<HTMLDivElement>) => {
       if (stopPropagation) {
         ev.stopPropagation();
       }

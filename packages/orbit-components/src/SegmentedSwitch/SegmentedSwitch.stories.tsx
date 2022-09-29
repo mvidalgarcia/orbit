@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { text, number, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
@@ -9,11 +8,11 @@ export default {
   title: "SegmentedSwitch",
 };
 
-export const Default = (): React.Node => {
+export const Default = () => {
   const label = text("Label", "Gender");
   const help = text("Help", "When Chuck Norris plays dodgeball, the balls dodge him.");
   const error = text("Error", "Chuck Norris makes onions cry.");
-  const maxWidth = number("maxWidth", undefined);
+  const maxWidth = number("maxWidth", NaN);
   const showTooltip = boolean("showTooltip", false);
 
   return (

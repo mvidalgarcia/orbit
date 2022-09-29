@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import type { Popper, Size } from "../types";
+import { Popper, Size } from "../types";
 import * as Common from "../../../common/types";
 
 export interface Props extends Common.Globals, Popper {
@@ -12,6 +12,7 @@ export interface Props extends Common.Globals, Popper {
   error?: boolean;
   help?: boolean;
   onClose: () => void;
+  onClick: (ev: React.MouseEvent<HTMLDivElement>) => void;
   onCloseMobile: () => void;
   onEnter: () => void;
   referenceElement: HTMLElement | null;

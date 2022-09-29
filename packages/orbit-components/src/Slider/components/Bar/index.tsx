@@ -49,13 +49,8 @@ export const StyledBarPart = styled(({ width, left, theme, active, ...props }) =
   height: 4px;
   top: 10px;
   border-radius: 4px;
-<<<<<<< HEAD:packages/orbit-components/src/Slider/components/Bar/index.jsx
   background-color: ${({ theme, active }) =>
     active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudNormal};
-=======
-  background-color: ${({ theme, active }: { theme: typeof defaultTheme; active?: boolean }) =>
-    active ? theme.orbit.paletteBlueNormal : theme.orbit.paletteCloudDarker};
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/Slider/components/Bar/index.tsx
 `;
 
 StyledBarPart.defaultProps = {

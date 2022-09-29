@@ -3,7 +3,7 @@
 
 import * as React from "react";
 
-import * as Common from "../common/common";
+import * as Common from "../common/types";
 
 /* eslint-disable @typescript-eslint/prefer-readonly-parameter-types */
 
@@ -12,12 +12,12 @@ export interface Option {
   readonly value: string | number;
   readonly disabled?: boolean;
   readonly name?: string;
-  readonly defaultCheck?: boolean;
+  readonly defaultChecked?: boolean;
 }
 
-export interface Props extends Common.Global {
-  readonly onChange: (ev: React.MouseEvent<HTMLButtonElement>) => void;
-  readonly onFocus?: (ev: React.FocusEvent<HTMLButtonElement>) => void;
+export interface Props extends Common.Globals, Common.SpaceAfter {
+  readonly onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
+  readonly onFocus?: (ev: React.SyntheticEvent<HTMLInputElement>) => void;
   readonly showTooltip?: boolean;
   readonly error?: React.ReactNode;
   readonly maxWidth?: string;
@@ -25,7 +25,3 @@ export interface Props extends Common.Global {
   readonly label?: React.ReactNode;
   readonly options: Option[];
 }
-
-declare const SegmentedSwitch: React.FunctionComponent<Props>;
-
-export { SegmentedSwitch, SegmentedSwitch as default };

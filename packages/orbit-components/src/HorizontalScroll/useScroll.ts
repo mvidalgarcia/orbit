@@ -6,35 +6,17 @@ const timing = (1 / 60) * 1000;
 // eslint-disable-next-line no-bitwise
 const decay = (v: number) => -0.1 * ((1 / timing) ^ 4) + v;
 
-<<<<<<< HEAD:packages/orbit-components/src/HorizontalScroll/useScroll.js
-type UseScroll = (ref: {| current: HTMLElement | null |}) => {|
-  isDragging: boolean,
-  clickStartX: ?number,
-  scrollStartX: ?number,
-  direction: number,
-  momentum: number,
-  speed: number,
-  lastScrollX: number,
-|};
-=======
-const TRIGGER_OFFSET = 50;
-
-type UseScroll = (
-  ref: React.RefObject<HTMLElement>,
-) => {
+const useScroll = (
+  ref: React.RefObject<HTMLDivElement>,
+): {
   isDragging: boolean;
-  clickStartX?: number;
-  scrollStartX?: number;
+  clickStartX: number | undefined;
+  scrollStartX: number | undefined;
   direction: number;
   momentum: number;
   speed: number;
   lastScrollX: number;
-  reachedEnd: boolean;
-  reachedStart: boolean;
-};
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/HorizontalScroll/useScroll.ts
-
-const useScroll: UseScroll = ref => {
+} => {
   const [clickStartX, setClickStartX] = useState<number | undefined>(undefined);
   const [scrollStartX, setScrollStartX] = useState<number | undefined>(undefined);
   const [isDragging, setIsDragging] = useState(false);
@@ -101,35 +83,13 @@ const useScroll: UseScroll = ref => {
         }
       };
 
-      // $FlowFixMe: on mobile browser is null, on desktop is undefined
+      // on mobile browser is null, on desktop is undefined
       if (currentRef && currentRef.ontouchstart === undefined) {
         currentRef.onmousedown = handleDragStart;
         currentRef.onmousemove = handleDragMove;
         currentRef.onmouseup = handleDragEnd;
         currentRef.onmouseleave = handleDragEnd;
       }
-<<<<<<< HEAD:packages/orbit-components/src/HorizontalScroll/useScroll.js
-=======
-    };
-
-    if (ref.current && ref.current.ontouchstart === undefined) {
-      // eslint-disable-next-line no-param-reassign
-      ref.current.onmousedown = handleDragStart;
-      // eslint-disable-next-line no-param-reassign
-      ref.current.onmousemove = handleDragMove;
-      // eslint-disable-next-line no-param-reassign
-      ref.current.onmouseup = handleDragEnd;
-      // eslint-disable-next-line no-param-reassign
-      ref.current.onmouseleave = handleDragEnd;
-    }
-
-    // $FlowFixMe: on mobile browser is null, on desktop is undefined
-    if (currentRef && currentRef.ontouchstart === undefined) {
-      currentRef.onmousedown = handleDragStart;
-      currentRef.onmousemove = handleDragMove;
-      currentRef.onmouseup = handleDragEnd;
-      currentRef.onmouseleave = handleDragEnd;
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/HorizontalScroll/useScroll.ts
     }
   }, [scrollWrapperCurrent, clickStartX, isDragging, scrollStartX, handleLastScrollX, lastScrollX]);
 

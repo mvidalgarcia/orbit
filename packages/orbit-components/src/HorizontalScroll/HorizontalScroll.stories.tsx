@@ -13,19 +13,10 @@ export default {
   title: "HorizontalScroll",
 };
 
-<<<<<<< HEAD:packages/orbit-components/src/HorizontalScroll/HorizontalScroll.stories.jsx
-export const Default = (): React.Node => {
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.XXXSMALL);
+export const Default = () => {
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.XXXSMALL);
   const overflowElevation = boolean("overflowElevation", true);
   const elevationColor = text("elevationColor", "#000");
-=======
-export const Default = () => {
-  const spacing = select(
-    "Spacing",
-    [undefined, ...Object.values(SPACINGS)],
-    SPACINGS.XXXSMALL,
-  ) as Spacing;
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/HorizontalScroll/HorizontalScroll.stories.tsx
 
   return (
     <HorizontalScroll

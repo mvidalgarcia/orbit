@@ -122,21 +122,13 @@ const HorizontalScroll = React.forwardRef<HTMLDivElement, Props>(
       ...props
     },
     ref,
-<<<<<<< HEAD:packages/orbit-components/src/HorizontalScroll/index.jsx
-  ): React.Node => {
-    const scrollWrapperRef: {| current: HTMLElement | null |} = React.useRef(null);
-    const [isOverflowing, setOverflowing] = React.useState(false);
-    const [reachedStart, setReachedStart] = React.useState(true);
-    const [reachedEnd, setReachedEnd] = React.useState(false);
-    const containerRef = React.useRef<HTMLElement | null>(null);
-    const { isDragging } = useScrollBox(scrollWrapperRef);
-=======
   ) => {
     const scrollWrapperRef = React.useRef<HTMLDivElement | null>(null);
     const containerRef = React.useRef<HTMLDivElement | null>(null);
     const [isOverflowing, setOverflowing] = React.useState(false);
-    const { isDragging, reachedStart, reachedEnd } = useScrollBox(scrollWrapperRef);
->>>>>>> b173f52e1 (refactor: second bunch of refactoring to ts (#3554)):packages/orbit-components/src/HorizontalScroll/index.tsx
+    const [reachedStart, setReachedStart] = React.useState(true);
+    const [reachedEnd, setReachedEnd] = React.useState(false);
+    const { isDragging } = useScrollBox(scrollWrapperRef);
     const theme = useTheme();
     const scrollEl = scrollWrapperRef.current;
 

@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import styled, { css } from "styled-components";
 
@@ -9,10 +8,12 @@ import Stack from "../Stack";
 import SwitchSegment, { StyledText, StyledLabel } from "./SwitchSegment";
 import ErrorFormTooltip from "../ErrorFormTooltip";
 import useErrorTooltip from "../ErrorFormTooltip/hooks/useErrorTooltip";
+import { Props } from "./types";
 
-import type { Props } from ".";
-
-const StyledWrapper = styled.label`
+const StyledWrapper = styled.label<{
+  $maxWidth?: Props["maxWidth"];
+  spaceAfter?: Props["spaceAfter"];
+}>`
   ${({ theme, $maxWidth }) => css`
     display: flex;
     width: 100%;
@@ -38,7 +39,6 @@ const StyledWrapper = styled.label`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledWrapper.defaultProps = {
   theme: defaultTheme,
 };
@@ -54,7 +54,7 @@ const SegmentedSwitch = ({
   help,
   error,
   label,
-}: Props): React.Node => {
+}: Props) => {
   const {
     tooltipShown,
     tooltipShownHover,

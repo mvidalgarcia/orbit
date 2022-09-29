@@ -4,17 +4,16 @@ import styled, { css } from "styled-components";
 
 import useClickOutside from "../../hooks/useClickOutside";
 import defaultTheme from "../../defaultTheme";
+import { Props } from "./types";
 
-import type { Props } from ".";
-
-export const StyledLabel: any = styled.label`
+export const StyledLabel = styled.label`
   display: flex;
   position: relative;
   width: 100%;
 `;
 
-export const StyledText: any = styled.div`
-  ${({ theme, selected }) => css`
+export const StyledText = styled.div`
+  ${({ theme }) => css`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,9 +31,7 @@ export const StyledText: any = styled.div`
     cursor: pointer;
     transition: color ${theme.orbit.durationFast} ease-in-out;
     width: 100%;
-    box-shadow: ${selected
-      ? `0 0 0 2px ${theme.orbit.paletteBlueNormal}`
-      : `0 0 0 1px ${theme.orbit.paletteCloudDark}`};
+    box-shadow: 0 0 0 1px ${theme.orbit.paletteCloudDark};
 
     &:hover {
       color: ${theme.orbit.paletteInkNormal};
@@ -42,7 +39,6 @@ export const StyledText: any = styled.div`
   `}
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledText.defaultProps = {
   theme: defaultTheme,
 };
@@ -69,7 +65,6 @@ const StyledInput = styled.input`
   `};
 `;
 
-// $FlowFixMe: https://github.com/flow-typed/flow-typed/issues/3653#issuecomment-568539198
 StyledInput.defaultProps = {
   theme: defaultTheme,
 };
@@ -83,8 +78,8 @@ const SwitchSegment = ({
   onFocus,
   defaultChecked,
   name,
-}: Props): React.Node => {
-  const ref = React.useRef(null);
+}: Props) => {
+  const ref = React.useRef<HTMLInputElement | null>(null);
   useClickOutside(ref, () => setTooltipShown(false));
 
   return (

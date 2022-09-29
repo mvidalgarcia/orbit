@@ -1,4 +1,3 @@
-// @flow
 import * as React from "react";
 import { select } from "@storybook/addon-knobs";
 
@@ -11,9 +10,9 @@ export default {
   title: "Linklist",
 };
 
-export const Default = (): React.Node => {
-  const direction = select("Direction", [null, ...Object.values(DIRECTIONS)], DIRECTIONS.ROW);
-  const spacing = select("Spacing", [null, ...Object.values(SPACINGS)], SPACINGS.MEDIUM);
+export const Default = () => {
+  const direction = select("Direction", Object.values(DIRECTIONS), DIRECTIONS.ROW);
+  const spacing = select("Spacing", Object.values(SPACINGS), SPACINGS.MEDIUM);
 
   return (
     <LinkList direction={direction} spacing={spacing}>
