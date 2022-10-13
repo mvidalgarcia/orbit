@@ -4,7 +4,7 @@ import { render, act } from "@testing-library/react";
 import { renderToString } from "react-dom/server";
 import MatchMediaMock from "jest-matchmedia-mock";
 
-import ThemeProvider from "../../../ThemeProvider";
+import OrbitProvider from "../../../OrbitProvider";
 import defaultTheme from "../../../defaultTheme";
 import useMediaQuery from "..";
 
@@ -40,13 +40,13 @@ describe("useMediaQuery", () => {
 
     function App() {
       return (
-        <ThemeProvider theme={theme}>
+        <OrbitProvider theme={theme}>
           <MediaQuery
             onChange={query => {
               result = query;
             }}
           />
-        </ThemeProvider>
+        </OrbitProvider>
       );
     }
 
@@ -110,7 +110,7 @@ describe("useMediaQuery", () => {
     matchMedia.useMediaQuery(`(min-width: ${widthBreakpointMediumMobile}px)`);
 
     render(
-      <ThemeProvider
+      <OrbitProvider
         theme={{
           ...theme,
           orbit: {
@@ -124,7 +124,7 @@ describe("useMediaQuery", () => {
             result = query;
           }}
         />
-      </ThemeProvider>,
+      </OrbitProvider>,
     );
 
     expect(result).toMatchInlineSnapshot(`
@@ -177,18 +177,18 @@ describe("useMediaQuery", () => {
       const matchMedia = new MatchMediaMock();
 
       const { rerender } = render(
-        <ThemeProvider theme={theme}>
+        <OrbitProvider theme={theme}>
           <UpdateCounter />
-        </ThemeProvider>,
+        </OrbitProvider>,
       );
 
       expect(updateCount).toBe(2);
 
       rerender(
         // change theme object reference to trigger re-render
-        <ThemeProvider theme={{ ...theme }}>
+        <OrbitProvider theme={{ ...theme }}>
           <UpdateCounter />
-        </ThemeProvider>,
+        </OrbitProvider>,
       );
 
       // nothing changed, so query object shouldn't either
@@ -199,16 +199,16 @@ describe("useMediaQuery", () => {
       });
 
       rerender(
-        <ThemeProvider theme={{ ...theme }}>
+        <OrbitProvider theme={{ ...theme }}>
           <UpdateCounter />
-        </ThemeProvider>,
+        </OrbitProvider>,
       );
 
       // viewport changed, query object should have updated
       expect(updateCount).toBe(3);
 
       rerender(
-        <ThemeProvider
+        <OrbitProvider
           theme={{
             ...theme,
             orbit: {
@@ -218,7 +218,7 @@ describe("useMediaQuery", () => {
           }}
         >
           <UpdateCounter />
-        </ThemeProvider>,
+        </OrbitProvider>,
       );
 
       // breakpoint no longer matches the viewport, query object should have updated

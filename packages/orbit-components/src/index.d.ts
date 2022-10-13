@@ -97,7 +97,7 @@ export {
   SmartPassV5,
 } from "./SmartPassIllustrations";
 export { Switch } from "./Switch";
-export { ThemeProvider } from "./ThemeProvider";
+export { OrbitProvider } from "./OrbitProvider";
 export { Translate } from "./Translate";
 export { NavigationBar } from "./NavigationBar";
 export { Drawer } from "./Drawer";

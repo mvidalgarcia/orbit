@@ -3,7 +3,7 @@ import * as React from "react";
 import { render } from "@testing-library/react";
 import MatchMediaMock from "jest-matchmedia-mock";
 
-import ThemeProvider from "../../../ThemeProvider";
+import OrbitProvider from "../../../OrbitProvider";
 import defaultTheme from "../../../defaultTheme";
 import useLockScrolling from "..";
 
@@ -98,22 +98,22 @@ describe("useLockScrolling", () => {
     expect(document.body).toHaveStyle({ overflow: "hidden" });
 
     rerender(
-      <ThemeProvider theme={{ ...defaultTheme, lockScrolling: false }}>
+      <OrbitProvider theme={{ ...defaultTheme, lockScrolling: false }}>
         <>
           <LockFoo>
             <LockBar lock={false} />
           </LockFoo>
           <LockBaz />
         </>
-      </ThemeProvider>,
+      </OrbitProvider>,
     );
 
     expect(document.body).not.toHaveStyle({ overflow: "hidden" });
 
     rerender(
-      <ThemeProvider theme={{ ...defaultTheme, lockScrolling: true, lockScrollingBarGap: true }}>
+      <OrbitProvider theme={{ ...defaultTheme, lockScrolling: true, lockScrollingBarGap: true }}>
         <LockBaz switchRefs />
-      </ThemeProvider>,
+      </OrbitProvider>,
     );
 
     // default globals.window is 1024 - 24

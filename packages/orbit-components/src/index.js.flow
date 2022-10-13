@@ -114,7 +114,7 @@ import typeof TagType from "./Tag";
 import typeof TextareaType from "./Textarea";
 import typeof TextLinkType from "./TextLink";
 import typeof TextType from "./Text";
-import typeof ThemeProviderType from "./ThemeProvider";
+import typeof OrbitProviderType from "./OrbitProvider";
 import typeof TileGroupType from "./TileGroup";
 import typeof TileType from "./Tile";
 import typeof TimelineStepType from "./Timeline/TimelineStep";
@@ -273,7 +273,7 @@ declare export var Truncate: TruncateType;
 declare export var Wizard: WizardType;
 declare export var WizardStep: WizardStepType;
 
-declare export var ThemeProvider: ThemeProviderType;
+declare export var OrbitProvider: OrbitProviderType;
 declare export var Translate: TranslateType;
 
 declare export var defaultTheme: Theme;

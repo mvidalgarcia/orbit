@@ -2,7 +2,7 @@ import * as React from "react";
 import { LiveProvider, LiveError } from "react-live";
 import dracula from "prism-react-renderer/themes/dracula";
 import styled, { css, createGlobalStyle } from "styled-components";
-import { ThemeProvider, defaultTheme } from "@kiwicom/orbit-components";
+import { OrbitProvider, defaultTheme } from "@kiwicom/orbit-components";
 import { graphql } from "gatsby";
 
 import { getModules, copyImports } from "../../components/ReactExample/helpers";
@@ -41,7 +41,7 @@ const Sandbox = ({ data }) => {
   }, [setCode, code, example_id]);
 
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <OrbitProvider theme={defaultTheme}>
       <LiveProvider code={code || example} scope={{ ...modules, styled, css }} theme={dracula}>
         <GlobalStyle />
         <LiveError />
@@ -57,7 +57,7 @@ const Sandbox = ({ data }) => {
           onChangeCode={c => setCode(c)}
         />
       </LiveProvider>
-    </ThemeProvider>
+    </OrbitProvider>
   );
 };
 

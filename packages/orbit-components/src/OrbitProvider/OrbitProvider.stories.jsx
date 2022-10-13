@@ -10,7 +10,7 @@ import languages from "../data/dictionary";
 import Badge from "../Badge";
 import Tooltip from "../Tooltip";
 
-import ThemeProvider from ".";
+import OrbitProvider from ".";
 
 const ButtonWithTranslation = () => {
   const translate = useTranslate();
@@ -18,15 +18,15 @@ const ButtonWithTranslation = () => {
 };
 
 export default {
-  title: "ThemeProvider",
+  title: "OrbitProvider",
 };
 
 export const DictionaryContext = (): React.Node => {
   const dictionary = select("dictionary", Object.keys(languages));
   return (
-    <ThemeProvider theme={{ orbit: getTokens() }} dictionary={languages[dictionary]}>
+    <OrbitProvider theme={{ orbit: getTokens() }} dictionary={languages[dictionary]}>
       <ButtonWithTranslation />
-    </ThemeProvider>
+    </OrbitProvider>
   );
 };
 
@@ -42,11 +42,11 @@ DictionaryContext.story = {
 export const WithoutTransitions = (): React.Node => {
   const transitions = boolean("transitions", false);
   return (
-    <ThemeProvider theme={{ orbit: getTokens(), transitions }}>
+    <OrbitProvider theme={{ orbit: getTokens(), transitions }}>
       <Tooltip content="Lorem ipsum dolor sit amet">
         <Badge>Info</Badge>
       </Tooltip>
-    </ThemeProvider>
+    </OrbitProvider>
   );
 };
 
@@ -78,9 +78,9 @@ export const OwnTheme = (): React.Node => {
   });
   const customTheme = object("customTheme", { black: "#000" });
   return (
-    <ThemeProvider theme={{ orbit: { ...getTokens(orbitTheme), ...customTheme } }}>
+    <OrbitProvider theme={{ orbit: { ...getTokens(orbitTheme), ...customTheme } }}>
       <Button onClick={action("onClick")}>Hello World!</Button>
-    </ThemeProvider>
+    </OrbitProvider>
   );
 };
 

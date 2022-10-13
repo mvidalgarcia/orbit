@@ -8,7 +8,7 @@ import QueryContextProvider from "./QueryContext/Provider";
 
 import type { Props } from ".";
 
-const ThemeProvider = ({ theme, dictionary, children }: Props): React.Node => {
+const OrbitProvider = ({ theme, dictionary, children }: Props): React.Node => {
   return (
     <UIDReset>
       <UIDFork>
@@ -26,4 +26,4 @@ const ThemeProvider = ({ theme, dictionary, children }: Props): React.Node => {
   );
 };
 
-export default ThemeProvider;
+export default OrbitProvider;

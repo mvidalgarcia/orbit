@@ -2,7 +2,7 @@
 import * as React from "react";
 import { defaultTokens } from "@kiwicom/orbit-design-tokens";
 
-import ThemeProvider from "../../ThemeProvider";
+import OrbitProvider from "../../OrbitProvider";
 
 type Props = {|
   +children: React.Node,
@@ -25,9 +25,9 @@ class RenderInRtl extends React.PureComponent<Props> {
 
   render(): React.Node {
     return (
-      <ThemeProvider theme={{ orbit: defaultTokens, rtl: true }}>
+      <OrbitProvider theme={{ orbit: defaultTokens, rtl: true }}>
         {this.props.children}
-      </ThemeProvider>
+      </OrbitProvider>
     );
   }
 }
