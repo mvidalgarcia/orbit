@@ -7,9 +7,9 @@ import mediaQueries from "../utils/mediaQuery";
 import { ALIGNS, JUSTIFY, DIRECTIONS, SPACINGS } from "../utils/layout/consts";
 import { DEVICES } from "../utils/mediaQuery/consts";
 import { isDefined } from "../utils/layout";
-import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
-import getGap from "./helpers/getGap";
 import shouldUseFlex from "./helpers/shouldUseFlex";
+import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
+import getChildrenMargin from "./helpers/getChildrenMargin";
 
 import type { Props } from ".";
 
@@ -25,12 +25,12 @@ const StyledStack = styled(({ className, element: Element, children, dataTest })
       viewport in mediaQueries
         ? mediaQueries[viewport](css`
             ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
-            ${getGap({ viewport, index, devices })}
+            ${getChildrenMargin({ viewport, index, devices })}
           `)
         : viewport === "smallMobile" &&
           css`
             ${getViewportFlexStyles(viewport)};
-            ${getGap({ viewport, index, devices })}
+            ${getChildrenMargin({ viewport, index, devices })}
           `,
     )};
 `;
