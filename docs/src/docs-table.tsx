@@ -1,6 +1,12 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import styled, { css } from "styled-components";
-import { mediaQueries as mq } from "@kiwicom/orbit-components";
+import {
+  TableHead,
+  TableBody,
+  TableRow,
+  TableCell,
+  mediaQueries as mq,
+} from "@kiwicom/orbit-components";
 import { StyledTable } from "@kiwicom/orbit-components/lib/Table";
 import { StyledTableCell } from "@kiwicom/orbit-components/lib/Table/TableCell";
 import { StyledTableRow } from "@kiwicom/orbit-components/lib/Table/TableRow";
@@ -83,6 +89,34 @@ const Table = styled(StyledTable)`
   }
 `;
 
+const PropsTableHead = ({ tableHeaders }) => {
+  return (
+    <TableHead>
+      <TableRow>
+        {tableHeaders.map(th => (
+          <TableHeadCell>{th}</TableHeadCell>
+        ))}
+      </TableRow>
+    </TableHead>
+  );
+};
+
+const PropsTableBody = ({ tableHeaders, tableData }) => {
+  return (
+    <TableBody>
+      {tableData.map(row => {
+        return (
+          <TableRow>
+            {tableHeaders.map(header => {
+              return <TableCell>{row[header]}</TableCell>;
+            })}
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  );
+};
+
 const StyledTableOuter = styled.div<{
   showShadows: boolean;
   showRight: boolean;
@@ -126,6 +160,33 @@ const StyledTableInner = styled.div<{ showShadows: boolean }>`
     `};
 `;
 
+function extractTableData(children: [ReactElement, ReactElement]) {
+  const [tableHead, tableBody] = children;
+  const tableHeadRow = React.Children.toArray(tableHead.props.children) as ReactElement[];
+  const tableHeadCells = React.Children.toArray(tableHeadRow[0].props.children) as ReactElement[];
+  const tableHeaders = tableHeadCells.map(th => th.props.children);
+
+  const tableRows = React.Children.toArray(tableBody.props.children) as ReactElement[];
+
+  const tableData: Array<Record<string, unknown>> = tableRows.reduce(
+    (tmpData: Array<Record<string, unknown>>, row) => {
+      const newData = {};
+      const rowData = (React.Children.toArray(row.props.children) as ReactElement[]).map(
+        td => td.props.children,
+      );
+
+      rowData.forEach((value, index) => {
+        newData[tableHeaders[index]] = value;
+      });
+
+      return [...tmpData, newData];
+    },
+    [],
+  );
+
+  return { tableHeaders, tableData };
+}
+
 const PropsTable = ({ children }) => {
   const [shadows, setShadows] = React.useState(false);
   const [right, setRight] = React.useState(false);
@@ -159,10 +220,16 @@ const PropsTable = ({ children }) => {
     };
   }, [handleResize]);
 
+  const { tableHeaders, tableData } = extractTableData(children);
+
   return (
     <StyledTableOuter ref={outer} showShadows={shadows} showLeft={left} showRight={right}>
       <StyledTableInner ref={inner} onScroll={handleScroll} showShadows={shadows}>
-        <Table ref={table}>{children}</Table>
+        <Table ref={table}>
+          {/* <PropsTableHead tableHeaders={tableHeaders} />
+          <PropsTableBody tableHeaders={tableHeaders} tableData={tableData} /> */}
+          {children}
+        </Table>
       </StyledTableInner>
     </StyledTableOuter>
   );
