@@ -10,6 +10,7 @@ import { isDefined } from "../utils/layout";
 import shouldUseFlex from "./helpers/shouldUseFlex";
 import getViewportFlexStyles from "./helpers/getViewportFlexStyles";
 import getChildrenMargin from "./helpers/getChildrenMargin";
+import getGap from "./helpers/getGap";
 
 import type { Props } from ".";
 
@@ -25,12 +26,16 @@ const StyledStack = styled(({ className, element: Element, children, dataTest })
       viewport in mediaQueries
         ? mediaQueries[viewport](css`
             ${isDefined(props[viewport]) && getViewportFlexStyles(viewport)};
-            ${getChildrenMargin({ viewport, index, devices })}
+            ${props.legacy
+              ? getChildrenMargin({ viewport, index, devices })
+              : getGap({ viewport, index, devices })};
           `)
         : viewport === "smallMobile" &&
           css`
             ${getViewportFlexStyles(viewport)};
-            ${getChildrenMargin({ viewport, index, devices })}
+            ${props.legacy
+              ? getChildrenMargin({ viewport, index, devices })
+              : getGap({ viewport, index, devices })};
           `,
     )};
 `;
@@ -46,6 +51,7 @@ const Stack = (props: Props): React.Node => {
     inline = false,
     spacing = SPACINGS.MEDIUM,
     align = ALIGNS.START,
+    legacy = false,
     justify = JUSTIFY.START,
     grow = true,
     wrap = false,
@@ -80,6 +86,7 @@ const Stack = (props: Props): React.Node => {
   return (
     <StyledStack
       dataTest={dataTest}
+      legacy={legacy}
       flex={isFlex}
       smallMobile={smallMobile}
       mediumMobile={mediumMobile}

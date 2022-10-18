@@ -9,7 +9,7 @@ import { QUERIES } from "../../utils/mediaQuery/consts";
 import type { GetChildrenMargin } from "./getChildrenMargin";
 import getDirectionSpacingTemplate from "./getDirectionSpacingTemplate";
 
-const isMobileViewport: IsMobileViewport = viewport =>
+const isMobileViewport = viewport =>
   viewport === "smallMobile" || viewport === "mediumMobile" || viewport === "largeMobile";
 
 const getChildrenMargin: GetChildrenMargin =
