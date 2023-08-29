@@ -97,7 +97,7 @@ describe("Wizard", () => {
         </Wizard>,
       );
       await act(() => user.click(screen.getByRole("button")));
-      await act(() => user.click(screen.getByRole("button", { name: "Close" })));
+      await act(() => user.click(screen.getByText("Close")));
       expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     });
   });
